@@ -1,6 +1,6 @@
 #include "joueur_initializer.h"
 //initialisation du joueur
-void intialisation_joueur(Joueur Player,unsigned int *nb_joueur) {
+void intialisation_joueur(Joueur Player[],unsigned int *nb_joueur) {
     int i;
     do {
         printf("Combien il y a t-il de joueur ? (Le maximum est de 4 joueurs)\n");
@@ -10,13 +10,14 @@ void intialisation_joueur(Joueur Player,unsigned int *nb_joueur) {
     }while(*nb_joueur>4);
     for(i=0;i<*nb_joueur;i++){
         printf("Information Joueur %d :\n",i+1);
-        printf("Veuillez saisir votre nom :\n");
-        scanf(" %s",Player.nom);
+        printf("Veuillez saisir votre pseudo :\n");
+        scanf(" %s",Player[i].nom);
+        Player[i].score=0;
+        Player[i].temps=1;
         printf("Merci\n");
         printf("\n");
         printf("\n");
     }
-    Player.score=0;
 }
 
 

@@ -34,12 +34,12 @@ int main() {
     bienvenue_jeu(&choix);
     switch (choix) {
         case 1:
-            intialisation_joueur(Player,&nb_player);
+            intialisation_joueur(&Player,&nb_player);
             printf("\t\t\t\t\t\t\t\t\t    DEBUT DE LA PARTIE\n");
             do {
                 affichage_tableau_2D(plateau_de_jeu, MAX);
                 printf("\n");
-                printf(" Joueur 1 a vous\n");//Utiliser le nom du joeur (pointeur sur nom joeur)
+                printf("%s a vous\n",Player[i].nom);//Utiliser le nom du joueur (pointeur sur nom joeur)
                 chevalet(chevalet_joueur, &pioche1, MAX_DECK);
                 printf("\n");
                 afficherMenuPendantPartie(&choix);
