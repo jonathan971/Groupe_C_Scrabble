@@ -11,7 +11,7 @@
 Le groupe est composé de 3 étudiants ING1 de l'ECE Lyon <br />
 
 <img src="https://i.ibb.co/tMr0csc/Photo-Jojo.png" width="140" height="160" />
-  | <img src="https://i.ibb.co/k42c4Nc/eb984b83-8743-4ef1-b567-0e568ebf2ba7-2-2.jpg" width="140" height="160" />
+  | <img src="https://i.ibb.co/k42c4Nc/eb984b83-8743-4ef1-b567-0e568ebf2ba7-2-2.jpg" width="100" height="160" />
   | <img src="https://i.ibb.co/FKMWvg7/202002-Photo-Paul-rogn-1145-2.jpg" width="140" height="160" /> | <br />
 ---------------------------|----------------------------|----------------------------|<br />
 VELIN Jonathan &nbsp; &nbsp; &nbsp;| Kenza ERRAJI &nbsp; &nbsp; &nbsp; &nbsp; | Paul NAVON &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
