@@ -18,7 +18,7 @@ Le groupe est composé de 3 étudiants ING1 de l'ECE Lyon <br />
 VELIN Jonathan &nbsp; &nbsp; &nbsp;| Kenza ERRAJI &nbsp; &nbsp; &nbsp; &nbsp; | Paul NAVON &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
 ## Contexte 
 
-## Fonctions et utlités
+## Sous-fichiers et utlités
 * `main` :  <br />
 * `Bienvenue` : Répertorie le menu principal et la pause, <br />
 * `Regle` : Répertorie toutes les règles du Scrabble et les crédits <br />
