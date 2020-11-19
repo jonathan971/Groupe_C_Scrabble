@@ -18,7 +18,7 @@ VELIN Jonathan &nbsp; &nbsp; &nbsp;| Kenza ERRAJI &nbsp; &nbsp; &nbsp; &nbsp; | 
 
 ## Contexte 
 
-## Sous-fichiers et utlités
+##  et utlités
 * `main` :  <br />
 * `Bienvenue` : Répertorie le menu principal et la pause, <br />
 * `Regle` : Répertorie toutes les règles du Scrabble et les crédits <br />
