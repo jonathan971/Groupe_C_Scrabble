@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "Regle.h"
 #include "Bienvenue.h"
+#include "laPioche.h"
 
 
 void mapping_pioche(pioche pioche1){
@@ -12,6 +13,8 @@ void distribution_pioche(pioche pioche1){
 
 int main() {
     unsigned int choix, nb_player=0, valide=0, jeu=1;
+    int occurrence_point[LIGNES][COLONNES] = {{0}};
+    char alphabet[LIGNES], lapioche[JETONS];
     char lettre;
     Joueur Player;
     pioche pioche1;
