@@ -3,16 +3,16 @@
                                                                           PROJET SCRABBLE
 ```
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-<img src="https://www.dropbox.com/s/yuyidhipf10bm62/21118-bubka-lettrescrabbleE.png?dl=1" width="80" height="80" /> <img src="https://www.dropbox.com/s/l8rhc628ngy25rg/21116-bubka-lettrescrabbleC_vista.ico?dl=1" width="80" height="80" /> <img src="https://www.dropbox.com/s/yuyidhipf10bm62/21118-bubka-lettrescrabbleE.png?dl=1" width="80" height="80" />
+<img src="https://i.ibb.co/xSGdV7S/bloggif-5fb68021e5dcf.gif" width="80" height="80" /> <img src="https://i.ibb.co/cwRN2Bp/bloggif-5fb680446eb8f.gif" width="80" height="80" /> <img src="https://i.ibb.co/xSGdV7S/bloggif-5fb68021e5dcf.gif" width="80" height="80" />
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://lh3.googleusercontent.com/qgFIwDrbiKmk4VHi-WASd6C_l5KIbVMabihQcC5cpG98gPO_uTD_OO2LVE6QOdvmLRA8awgAJgVIyaf1fJQi9ZXi9YGuu900=s750" width="400" height="300" />
 
 ## Composition du groupe 
 
 Le groupe est composé de 3 étudiants ING1 de l'ECE Lyon <br />
 
-<img src="https://www.dropbox.com/s/i4nnp7l4jcnug0q/Photo_Jojo.png?dl=1" width="140" height="160" />
-  | <img src="https://www.dropbox.com/s/ub7p5fliubx9nmm/eb984b83-8743-4ef1-b567-0e568ebf2ba7%202-2.jpg?dl=1" width="140" height="160" />
-  | <img src="https://www.dropbox.com/s/shvxukmp3l189tj/202002-%20Photo%20Paul%20rogn%C3%A9%20%5B1145%5D-2.jpg?dl=1" width="140" height="160" /> <br />
+<img src="https://i.ibb.co/tMr0csc/Photo-Jojo.png" width="140" height="160" />
+  | <img src="https://i.ibb.co/k42c4Nc/eb984b83-8743-4ef1-b567-0e568ebf2ba7-2-2.jpg" width="140" height="160" />
+  | <img src="https://i.ibb.co/FKMWvg7/202002-Photo-Paul-rogn-1145-2.jpg" width="140" height="160" /> <br />
 
 |---------------------------|----------------------------|----------------------------|<br />
 VELIN Jonathan &nbsp; &nbsp; &nbsp;| Kenza ERRAJI &nbsp; &nbsp; &nbsp; &nbsp; | Paul NAVON &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
