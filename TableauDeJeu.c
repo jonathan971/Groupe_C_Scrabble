@@ -15,15 +15,21 @@ void affichage_tableau_2D(char tab[MAX][MAX],int taille_logique){// Affichage li
     }
 }
 
-void chevalet(char tableau[],pioche *Pioche, int taille_logique_deck){ // affichage chevalet
+void creationchevalet(char tableau[], int taille_logique_deck) { // affichage chevalet
     int i;
-    /*for(i=0;i<taille_logique_deck;i++){
-        //faire le random pioche deck ICI
-        scanf("%c",&tableau[i]);
-    }*/
+    int occurrence_point[LIGNES][COLONNES] = {{0}};
+    char alphabet[LIGNES], lapioche[JETONS];
+    for (i = 0; i < taille_logique_deck; i++) {
+        tableau[i]=laPioche(alphabet, lapioche, occurrence_point);
+
+    }
+}
+
+void affichagechevalet(char tableau[], int taille_logique_deck){
+    int i;
     for(i=0;i<taille_logique_deck;i++){
         printf("\t      |");
-        printf("%4c",32/*tableau[i]*/);
+        printf("%4c",tableau[i]);
     }
     printf("\n");
     printf("\n");

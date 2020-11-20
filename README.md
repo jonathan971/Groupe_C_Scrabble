@@ -10,9 +10,9 @@
 
 Le groupe est composé de 3 étudiants ING1 de l'ECE Lyon <br />
 
-<img src="https://i.ibb.co/tMr0csc/Photo-Jojo.png" width="140" height="160" />
-  | <img src="https://i.ibb.co/k42c4Nc/eb984b83-8743-4ef1-b567-0e568ebf2ba7-2-2.jpg" width="140" height="160" />
-  | <img src="https://i.ibb.co/FKMWvg7/202002-Photo-Paul-rogn-1145-2.jpg" width="140" height="160" /> | <br />
+<img src="https://i.ibb.co/tMr0csc/Photo-Jojo.png" width="140" height="150" />
+  | <img src="https://i.ibb.co/T1CqCyH/43a2ede7-e724-427a-a627-e49e9cb65383.jpg" width="140" height="150" />
+  | <img src="https://i.ibb.co/FKMWvg7/202002-Photo-Paul-rogn-1145-2.jpg" width="140" height="150" /> | <br />
 ---------------------------|----------------------------|----------------------------|<br />
 VELIN Jonathan &nbsp; &nbsp; &nbsp;| Kenza ERRAJI &nbsp; &nbsp; &nbsp; &nbsp; | Paul NAVON &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
 
@@ -23,8 +23,10 @@ VELIN Jonathan &nbsp; &nbsp; &nbsp;| Kenza ERRAJI &nbsp; &nbsp; &nbsp; &nbsp; | 
 * `Bienvenue` : Répertorie le menu principal et la pause, <br />
 * `Regle` : Répertorie toutes les règles du Scrabble et les crédits <br />
 * `joueur_initializer` : Initialise le joueur <br />
-* `TableauDeJeu` : Initalisation et création du tableau de jeu et du chevalet <br />
-* `Pioche` : Initalisation et création de la pioche du jeu
+* `TableauDeJeu` : Initalisation et création du plateau de jeu et du chevalet <br />
+* `Pioche` : Initalisation et création de la pioche du jeu <br />
+* `laPioche` : Initialisation de la pioche du jeu
+* `Creation du mot` : Dépot du mot sur le plateau de jeu 
 
 ## Amélioration
 Très bientot vous pourrez jouer seul contre un IA...

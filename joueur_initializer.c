@@ -1,6 +1,6 @@
 #include "joueur_initializer.h"
 //initialisation du joueur
-void intialisation_joueur(Joueur Player[],unsigned int *nb_joueur) {
+void intialisation_joueur(Joueur Player[],unsigned int *nb_joueur, char tableau[]) {
     int i;
     do {
         printf("Combien il y a t-il de joueur ? (Le maximum est de 4 joueurs)\n");
@@ -14,6 +14,7 @@ void intialisation_joueur(Joueur Player[],unsigned int *nb_joueur) {
         scanf(" %s",Player[i].nom);
         Player[i].score=0;
         Player[i].temps=1;
+        creationchevalet(tableau, MAX_DECK);
         printf("Merci\n");
         printf("\n");
         printf("\n");
