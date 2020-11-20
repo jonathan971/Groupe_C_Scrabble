@@ -1,6 +1,9 @@
 #include "TableauDeJeu.h"
+#include <stdlib.h>
+#include <time.h>
 
-void affichage_tableau_2D(char tab[MAX][MAX],int taille_logique){// Affichage lignes et colonnes
+
+void affichage_tableau_2D(char tab[MAX][MAX], int taille_logique){// Affichage lignes et colonnes
     int i,j;
     puts("\n      A     B     C     D     E     F     G     H     I     J     K     L     M     N     O");
     for(i=0;i<taille_logique;i++){
@@ -15,24 +18,24 @@ void affichage_tableau_2D(char tab[MAX][MAX],int taille_logique){// Affichage li
     }
 }
 
-void creationchevalet(char tableau[], int taille_logique_deck) { // affichage chevalet
+void creationchevalet(char tableau[], int taille_logique_deck,int occurrence_point[LIGNES][COLONNES]) { // affichage chevalet
     int i;
-    int occurrence_point[LIGNES][COLONNES] = {{0}};
     char alphabet[LIGNES], lapioche[JETONS];
-    for (i = 0; i < taille_logique_deck; i++) {
-        tableau[i]=laPioche(alphabet, lapioche, occurrence_point);
-
+    laPioche( alphabet, lapioche, occurrence_point);
+    for (i = 0; i < taille_logique_deck-1; i++) {
+        tableau[i]=lapioche[i];
     }
 }
 
-void affichagechevalet(char tableau[], int taille_logique_deck){
+void affichagechevalet(char tableau[], int taille_logique_deck, int occurrence_point[LIGNES][COLONNES]){
     int i;
-    for(i=0;i<taille_logique_deck;i++){
-        printf("\t      |");
-        printf("%4c",tableau[i]);
+    printf("\t\t");
+    for(i=0;i<taille_logique_deck-1;i++) {
+            printf("\t");
+            printf("|");
+            printf("%4c%d", tableau[i], occurrence_point[i][1]);
     }
-    printf("\n");
+    printf("\t");
+    printf("|");
     printf("\n");
 }
-
-

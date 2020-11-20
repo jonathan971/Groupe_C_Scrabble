@@ -18,7 +18,7 @@ void saisieAlphabet(char alphabet[]){//on crée un tableau avec les lettres de l
     alphabet[LIGNES-1]=(char)JOKER;
 }
 
-void saisieOccurrenceValeurs(const char alphabet[],int occurrence_point[][COLONNES]){//on initialise le nb de fois la présence des lettres dans la pioche + leurs valeurs
+void saisieOccurrenceValeurs(const char alphabet[],int occurrence_point[LIGNES][COLONNES]){//on initialise le nb de fois la présence des lettres dans la pioche + leurs valeurs
     int i;
     for(i=0;i<LIGNES;i++){
         switch(alphabet[i]){
@@ -186,7 +186,7 @@ void saisieOccurrenceValeurs(const char alphabet[],int occurrence_point[][COLONN
     }
 }
 
-void suivitDeLaPioche(char alphabet[],int occurrence_point[][COLONNES]) {//on initialise avec les 2 procédures précédantes le GRAND tableau
+void suivitDeLaPioche(char alphabet[],int occurrence_point[LIGNES][COLONNES]) {//on initialise avec les 2 procédures précédantes le GRAND tableau
     saisieAlphabet(alphabet);
     saisieOccurrenceValeurs(alphabet, occurrence_point);
 }
@@ -216,7 +216,7 @@ void leSacAJetons(char lapioche[],const char alphabet[LIGNES],int occurrence_poi
     melangeDuSac(lapioche);
 }
 
-char laPioche(char alphabet[], char lapioche[], int occurrence_point[][COLONNES]){
+char laPioche(char alphabet[], char lapioche[], int occurrence_point[LIGNES][COLONNES]){
     srand(time(NULL));
     suivitDeLaPioche(alphabet, occurrence_point);
     leSacAJetons(lapioche, alphabet, occurrence_point);

@@ -8,6 +8,7 @@ int main() {
     unsigned int choix, nb_player=0, valide=0, jeu=1;
     char lettre;
     Joueur Player;
+    int occurrence_point[LIGNES][COLONNES];
     char chevalet_joueur[MAX_DECK]={36};
     char plateau_de_jeu[MAX][MAX]={{36,32,32,38,32,32,32,36,32,32,32,38,32,32,36},
                                    {32,64,32,32,32,37,32,32,32,37,32,32,32,64,32},
@@ -35,7 +36,7 @@ int main() {
                 /*for(int i=0; i<1;i++) {
                     printf("%s a vous\n", Player[i].nom);
                 }//Utiliser le nom du joueur (pointeur sur nom joeur)*/
-                affichagechevalet(chevalet_joueur,MAX_DECK);
+                affichagechevalet(chevalet_joueur,MAX_DECK,occurrence_point);
                 printf("\n");
                 afficherMenuPendantPartie(&choix);
                 /*do {
