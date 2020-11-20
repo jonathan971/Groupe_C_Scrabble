@@ -1,13 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#define JETONS 102
-#define LIGNES 27
-#define COLONNES 2
-#define JOKER 219
-#define DEBUT_PIOCHE 1
-#define FIN_PIOCHE 102
-#define NB_ITERATION_BOUCLERANDOM 102
+#include "laPioche.h"
 
 void saisieAlphabet(char alphabet[]){//on crée un tableau avec les lettres de l'alphabet
     int i,a=(int)'A';
