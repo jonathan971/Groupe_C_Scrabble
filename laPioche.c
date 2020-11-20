@@ -216,9 +216,8 @@ void leSacAJetons(char lapioche[],const char alphabet[LIGNES],int occurrence_poi
     melangeDuSac(lapioche);
 }
 
-char laPioche(char alphabet[], char lapioche[], int occurrence_point[LIGNES][COLONNES]){
+void laPioche(char alphabet[], char lapioche[], int occurrence_point[LIGNES][COLONNES]){
     srand(time(NULL));
     suivitDeLaPioche(alphabet, occurrence_point);
     leSacAJetons(lapioche, alphabet, occurrence_point);
-    return 0;
 }
