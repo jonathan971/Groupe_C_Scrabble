@@ -12,6 +12,6 @@
 #ifndef GROUPE_C_SCRABBLE_LAPIOCHE_H
 #define GROUPE_C_SCRABBLE_LAPIOCHE_H
 
-char laPioche(char alphabet[], char lapioche[], int occurrence_point[][COLONNES]);
+void laPioche(char alphabet[], char lapioche[], int occurrence_point[][COLONNES]);
 
 #endif
