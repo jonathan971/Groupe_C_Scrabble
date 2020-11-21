@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "laPioche.h"
+#include "pickJetons.h"
 #define MAX 15
 
 #ifndef PROJET_SCRABBLE_TABLEAUDEJEU_H

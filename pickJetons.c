@@ -1,7 +1,6 @@
 #include "pickJetons.h"
 
-
-int pickJetons(char lapioche[]){
+char pickJetons(char lapioche[]){
     srand(time(NULL));
     int alea,modiftaillephysique=0;
     char lettre, securite;

@@ -197,7 +197,7 @@ void regle_jeu(unsigned int *choix) {
 
             case 6:
                 printf("6. Le chronométrage de la partie\n"
-                       "6.1. Chaque joueur a 1 min de jeu par tour\n"
+                       "6.1. Chaque joueur a 2 min de jeu par tour\n"
                        "6.2. Des l'affichage du chavalet du joeur, la pendule est actionnée\n"
                        "6.3. Quand il a fini de jouer le joueur arrete le temps\n");
                 retour(choix);

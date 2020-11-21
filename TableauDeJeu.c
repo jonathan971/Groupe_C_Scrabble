@@ -1,6 +1,4 @@
 #include "TableauDeJeu.h"
-#include <stdlib.h>
-#include <time.h>
 
 
 void affichage_tableau_2D(char tab[MAX][MAX], int taille_logique){// Affichage lignes et colonnes
@@ -23,7 +21,7 @@ void creationchevalet(char tableau[], int taille_logique_deck,int occurrence_poi
     char alphabet[LIGNES], lapioche[JETONS];
     laPioche( alphabet, lapioche, occurrence_point);
     for (i = 0; i < taille_logique_deck-1; i++) {
-        tableau[i]=lapioche[i];
+        tableau[i]=pickJetons(lapioche);
     }
 }
 
@@ -33,7 +31,7 @@ void affichagechevalet(char tableau[], int taille_logique_deck, int occurrence_p
     for(i=0;i<taille_logique_deck-1;i++) {
             printf("\t");
             printf("|");
-            printf("%4c%d", tableau[i], occurrence_point[i][1]);
+            printf("%4c", tableau[i]);
     }
     printf("\t");
     printf("|");

@@ -27,6 +27,7 @@ VELIN Jonathan &nbsp; &nbsp; &nbsp;| Kenza ERRAJI &nbsp; &nbsp; &nbsp; &nbsp; | 
 * `Pioche` : Initalisation et création de la pioche du jeu <br />
 * `laPioche` : Initialisation de la pioche du jeu
 * `Creation du mot` : Dépot du mot sur le plateau de jeu 
+* `pickJetons` : 
 
 ## Amélioration
 Très bientot vous pourrez jouer seul contre un IA...
