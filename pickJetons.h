@@ -5,6 +5,6 @@
 #ifndef GROUPE_C_SCRABBLE_PICKJETONS_H
 #define GROUPE_C_SCRABBLE_PICKJETONS_H
 
-void pickJetons(char lapioche[]);
+char pickJetons(char lapioche[], int*modiftaillephysique);
 
 #endif

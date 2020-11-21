@@ -1,15 +1,15 @@
 #include "pickJetons.h"
 
 
-int pickJetons(char lapioche[]){
+char pickJetons(char lapioche[], int* modiftaillephysique){
     srand(time(NULL));
-    int alea,modiftaillephysique=0;
+    int alea;
     char lettre, securite;
-    alea=rand()%(JETONS-modiftaillephysique);
+    alea=rand()%(JETONS-*modiftaillephysique);
     lettre=lapioche[alea];
-    securite=lapioche[JETONS-modiftaillephysique];
-    lapioche[JETONS-modiftaillephysique]=lettre;
+    securite=lapioche[JETONS-*modiftaillephysique];
+    lapioche[JETONS-*modiftaillephysique]=lettre;
     lapioche[alea]=securite;
-    modiftaillephysique++;
+    (*modiftaillephysique)++;
     return lettre;
 }

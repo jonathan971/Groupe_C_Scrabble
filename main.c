@@ -6,10 +6,12 @@
 
 int main() {
     unsigned int choix, nb_player=0, valide=0, jeu=1;
+    int modiftaillephysique=0;
     char lettre;
     Joueur Player;
     int occurrence_point[LIGNES][COLONNES];
-    char chevalet_joueur[MAX_DECK]={36};
+    char chevalet_joueur[MAX_DECK]={36}, alphabet[LIGNES], lapioche[LIGNES];
+    laPioche( alphabet, lapioche, occurrence_point);
     char plateau_de_jeu[MAX][MAX]={{36,32,32,38,32,32,32,36,32,32,32,38,32,32,36},
                                    {32,64,32,32,32,37,32,32,32,37,32,32,32,64,32},
                                    {32,32,64,32,32,32,38,32,38,32,32,32,64,32,32},
@@ -28,7 +30,7 @@ int main() {
     bienvenue_jeu(&choix);
     switch (choix) {
         case 1:
-            intialisation_joueur(&Player,&nb_player,chevalet_joueur);
+            intialisation_joueur(&Player, &nb_player, chevalet_joueur, &modiftaillephysique, lapioche);
             printf("\t\t\t\t\t\t\t\t\t    DEBUT DE LA PARTIE\n");
             do {
                 affichage_tableau_2D(plateau_de_jeu, MAX);
