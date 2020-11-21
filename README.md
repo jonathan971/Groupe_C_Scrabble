@@ -16,9 +16,10 @@ Le groupe est composé de 3 étudiants ING1 de l'ECE Lyon <br />
 ---------------------------|----------------------------|----------------------------|<br />
 VELIN Jonathan &nbsp; &nbsp; &nbsp;| Kenza ERRAJI &nbsp; &nbsp; &nbsp; &nbsp; | Paul NAVON &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
 
-## Contexte 
-
+## Bienvenue sur Scrabble by NEJ 
+Une soirée entre amis et personne ne sait quoi faire ? Un après-midi en famille et tout le monde s’ennuie ? Pourquoi ne pas tenter une partie de Scrabble ? Ce serait un bon moyen de passer le temps tout en s’assurant de passer un bon moment ensemble !<br />
 ## Sous-fichiers et utlités
+Dans ce dossier vous trouverez les sous-fichiers suivants :
 * `main` :  <br />
 * `Bienvenue` : Répertorie le menu principal et la pause, <br />
 * `Regle` : Répertorie toutes les règles du Scrabble et les crédits <br />
@@ -27,7 +28,7 @@ VELIN Jonathan &nbsp; &nbsp; &nbsp;| Kenza ERRAJI &nbsp; &nbsp; &nbsp; &nbsp; | 
 * `Pioche` : Initalisation et création de la pioche du jeu <br />
 * `laPioche` : Initialisation de la pioche du jeu
 * `Creation du mot` : Dépot du mot sur le plateau de jeu 
-* `pickJetons` : 
+* `pickJetons` : Prise d'un jeton dans la pioche
 
 ## Amélioration
 Très bientot vous pourrez jouer seul contre un IA...

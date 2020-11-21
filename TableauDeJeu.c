@@ -17,20 +17,13 @@ void affichage_tableau_2D(char tab[MAX][MAX], int taille_logique){// Affichage l
     }
 }
 
-void creationchevalet(char tableau[], int taille_logique_deck,char lapioche[], int * modiftaillephysique) { // affichage chevalet
-    int i;
-    for (i = 0; i < taille_logique_deck-1; i++) {
-        tableau[i]=pickJetons(lapioche, modiftaillephysique);
-    }
-}
-
 void affichagechevalet(char tableau[], int taille_logique_deck, int occurrence_point[LIGNES][COLONNES]){
     int i;
     printf("\t\t");
     for(i=0;i<taille_logique_deck-1;i++) {
             printf("\t");
             printf("|");
-            printf("%4c%d", tableau[i], occurrence_point[i][1]);
+            printf("%4c", tableau[i]);
     }
     printf("\t");
     printf("|");
