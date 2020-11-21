@@ -7,8 +7,8 @@
 
 #include <stdlib.h>
 #include <time.h>
-
 #define NB_ITERATION_BOUCLERANDOM 102
+
 #ifndef GROUPE_C_SCRABBLE_LAPIOCHE_H
 #define GROUPE_C_SCRABBLE_LAPIOCHE_H
 
