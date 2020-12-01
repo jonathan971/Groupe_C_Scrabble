@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "TableauDeJeu.h"
+
 #define MAX 15
 #define MAX_PSEUDO 11
 #define MAX_DECK 8
@@ -11,6 +12,6 @@ typedef struct {
 #ifndef GROUPE_C_SCRABBLE_JOUEUR_INITIALIZER_H
 #define GROUPE_C_SCRABBLE_JOUEUR_INITIALIZER_H
 
-void intialisation_joueur(Joueur Player[],unsigned int *nb_joueur, char tableau[], int*modiftaillephysique,char lapioche[],char alphabet[]);
+void intialisation_joueur(Joueur Player[], int*modiftaillephysique,char lapioche[]);
 
 #endif //GROUPE_C_SCRABBLE_JOUEUR_INITIALIZER_H

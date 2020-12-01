@@ -185,9 +185,9 @@ void suivitDeLaPioche(char alphabet[],int occurrence_point[LIGNES][COLONNES]) {/
 void melangeDuSac(char lapioche[]){
     int i,lettreadeplace, interverser;
     char securite1, securite2;
-    for(i=0;i<NB_ITERATION_BOUCLERANDOM;i++){
-        lettreadeplace=rand()%(DEBUT_PIOCHE-FIN_PIOCHE)+DEBUT_PIOCHE;
-        interverser=rand()%(DEBUT_PIOCHE-FIN_PIOCHE)+DEBUT_PIOCHE;
+    for(i=0;i<FIN_PIOCHE;i++){
+        lettreadeplace=rand()%(DEBUT_PIOCHE-FIN_PIOCHE+1)+DEBUT_PIOCHE;
+        interverser=rand()%(DEBUT_PIOCHE-FIN_PIOCHE+1)+DEBUT_PIOCHE;
         securite1=lapioche[lettreadeplace];
         securite2=lapioche[interverser];
         lapioche[interverser]=securite1;
@@ -207,8 +207,19 @@ void leSacAJetons(char lapioche[],const char alphabet[LIGNES],int occurrence_poi
     melangeDuSac(lapioche);
 }
 
-void laPioche(char alphabet[], char lapioche[], int occurrence_point[LIGNES][COLONNES]){
-    srand(time(NULL));
+void laPioche(char* alphabet, char* lapioche,int occurrence_point[LIGNES][COLONNES]){
     suivitDeLaPioche(alphabet, occurrence_point);
     leSacAJetons(lapioche, alphabet, occurrence_point);
+}
+
+char pickJetons(char lapioche[JETONS+1], int* modiftaillephysique){
+    int alea;
+    char lettre, securite;
+    alea=rand()%(JETONS-*modiftaillephysique);
+    lettre=lapioche[alea];
+    securite=lapioche[JETONS-1-*modiftaillephysique];
+    lapioche[JETONS-1-*modiftaillephysique]=lettre;
+    lapioche[alea]=securite;
+    (*modiftaillephysique)++;
+    return lettre;
 }

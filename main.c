@@ -5,13 +5,28 @@
 
 
 int main() {
-    unsigned int choix, nb_player=0, valide=0, jeu=1;
-    int modiftaillephysique=0;
-    char lettre;
-    Joueur Player;
-    int occurrence_point[LIGNES][COLONNES];
-    char alphabet[LIGNES], lapioche[LIGNES];
+    unsigned int choix,jeu=1;
+
+    int i,j;
+    srand(time(NULL));
+    int modiftaillephysique=0,occurrence_point[LIGNES][COLONNES];
+    char alphabet[LIGNES], lapioche[LIGNES+1];
+    char tableau[MAX_DECK];
     laPioche( alphabet, lapioche, occurrence_point);
+    for (i = 0; i < LIGNES; i++) {
+        printf("%c", alphabet[i]);
+        for (j = 0; j < COLONNES; j++) {
+            if (j == 0) {
+                printf("|%d", occurrence_point[i][j]);
+            } else {
+                printf("|%d|\n", occurrence_point[i][j]);
+            }
+        }
+    }
+    printf("\n");
+    affichagechevalet(tableau, MAX_DECK, occurrence_point, alphabet);
+
+    Joueur Player;
     char plateau_de_jeu[MAX][MAX]={{36,32,32,38,32,32,32,36,32,32,32,38,32,32,36},
                                    {32,64,32,32,32,37,32,32,32,37,32,32,32,64,32},
                                    {32,32,64,32,32,32,38,32,38,32,32,32,64,32,32},
@@ -30,14 +45,14 @@ int main() {
     bienvenue_jeu(&choix);
     switch (choix) {
         case 1:
-            intialisation_joueur(&Player, &nb_player, Player.chevalet_joueur, &modiftaillephysique, lapioche,alphabet);
+            intialisation_joueur(&Player, &modiftaillephysique, lapioche);
             printf("\t\t\t\t\t\t\t\t\t    DEBUT DE LA PARTIE\n");
             do {
                 affichage_tableau_2D(plateau_de_jeu, MAX);
                 printf("\n");
                 for(int i=0; i<1;i++) {
-                    printf("%s a vous\n", Player.nom);
-                    affichagechevalet(Player.chevalet_joueur, MAX_DECK, occurrence_point);
+                    printf("%s, a vous :\n", Player.nom);
+                    affichagechevalet(Player.chevalet_joueur, MAX_DECK, occurrence_point,alphabet);
                     printf("\n");
                 }
                 afficherMenuPendantPartie(&choix);
