@@ -11,6 +11,8 @@ void placementPremierMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX
         case 'h':
             placementHorizontal(nombreLettres, plateau_de_jeu, chevalet_joueur);
             break;
+        default:
+            break;
     }
 }
 
@@ -25,6 +27,8 @@ void placementMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK])
             placementVertical(nombreLettres, plateau_de_jeu, chevalet_joueur);
         case 'h':
             placementHorizontal(nombreLettres, plateau_de_jeu, chevalet_joueur);
+            break;
+        default:
             break;
     }
 }
