@@ -4,11 +4,8 @@
 #include "laPioche.h"
 #include "Verification_chevalet.h"
 
-
-
 int main() {
     unsigned int choix,jeu=1;
-
     int i,j;
     srand(time(NULL));
     int modiftaillephysique=0,occurrence_point[LIGNES][COLONNES];

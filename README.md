@@ -14,9 +14,9 @@ Le groupe est composé de 3 étudiants ING1 de l'ECE Lyon <br />
   | <img src="https://i.ibb.co/T1CqCyH/43a2ede7-e724-427a-a627-e49e9cb65383.jpg" width="140" height="150" />
   | <img src="https://i.ibb.co/FKMWvg7/202002-Photo-Paul-rogn-1145-2.jpg" width="140" height="150" /> | <br />
 ---------------------------|----------------------------|----------------------------|<br />
-VELIN Jonathan &nbsp; &nbsp; &nbsp;| Kenza ERRAJI &nbsp; &nbsp; &nbsp; &nbsp; | Paul NAVON &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
+Jonathan VELIN &nbsp; &nbsp; &nbsp;| Kenza ERRAJI &nbsp; &nbsp; &nbsp; &nbsp; | Paul NAVON &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
 
-## Bienvenue sur Scrabble by NEJ 
+## Bienvenue sur Scrabble by JPK & NEV 
 Une soirée entre amis et personne ne sait quoi faire ? Un après-midi en famille et tout le monde s’ennuie ? Pourquoi ne pas tenter une partie de Scrabble ? Ce serait un bon moyen de passer le temps tout en s’assurant de passer un bon moment ensemble !<br />
 ## Sous-fichiers et utlités
 Dans ce dossier vous trouverez les sous-fichiers suivants :
@@ -31,5 +31,5 @@ Dans ce dossier vous trouverez les sous-fichiers suivants :
 * `Verification_chevalet` : Pose le mot sur le tableau, vérifie que ce mot existe, verifie que les lettres du mot sont dans le chevalet du joueur  <br />
 
 ## Amélioration
-Très bientot vous pourrez jouer seul contre un IA...
+Très bientot vous pourrez jouer seul contre un IA...<br />
 #####BON JEU !!

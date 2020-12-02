@@ -89,26 +89,10 @@ void placementVertical(int nombreLettres, char plateau_de_jeu[MAX][MAX], char ch
                 printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
             }
         }while (plateau_de_jeu[i][j] != ' ');
-        placementAutreLettre(nombreLettres, plateau_de_jeu, chevalet_joueur, i, j);
+        placementAutreLettre(nombreLettres, i, j, plateau_de_jeu, chevalet_joueur);
         nombreLettres--;
     }
 }
-
-void placementHorizontal(int nombreLettres, char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK]){
-    int i = 0, j = 0;
-    while (nombreLettres > 0) {
-        do {
-            printf("Saisissez le numero de la case suivante (premier composant de la case)");
-            scanf("%d", &i); //[i] pour que le mot soit ecrit vers le bas comme [j] ne change pas
-            if (plateau_de_jeu[i][j] != ' ') {
-                printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
-            }
-        }while (plateau_de_jeu[i][j] != ' ');
-        placementAutreLettre(nombreLettres, plateau_de_jeu, chevalet_joueur, i, j);
-        nombreLettres--;
-    }
-}
-
 void placementAutreLettre(int nombreLettres, int i, int j, char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK]){
     int k= 0;
     char lettreAPlacer = '0';
@@ -131,3 +115,20 @@ void placementAutreLettre(int nombreLettres, int i, int j, char plateau_de_jeu[M
         }
     }while (plateau_de_jeu[i][j] == ' ');
 }
+
+void placementHorizontal(int nombreLettres, char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK]){
+    int i = 0, j = 0;
+    while (nombreLettres > 0) {
+        do {
+            printf("Saisissez le numero de la case suivante (premier composant de la case)");
+            scanf("%d", &i); //[i] pour que le mot soit ecrit vers le bas comme [j] ne change pas
+            if (plateau_de_jeu[i][j] != ' ') {
+                printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
+            }
+        }while (plateau_de_jeu[i][j] != ' ');
+        placementAutreLettre(nombreLettres, i, j, plateau_de_jeu, chevalet_joueur);
+        nombreLettres--;
+    }
+}
+
+
