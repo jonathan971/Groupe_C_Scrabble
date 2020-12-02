@@ -1,6 +1,6 @@
 #include "Verification_chevalet.h"
 void placementPremierMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK]){ //pour le tout premier mot du jeu
-    char sensMot = '0';
+    char sensMot = 0;
     int nombreLettres = 0;
     nombreLettres = nombreDeLettres();
     sensMot = sensDuMot();
@@ -57,7 +57,7 @@ void placementPremiereLettrePremierMot(int nombreLettres, char plateau_de_jeu[MA
             for (k = 0; k < nombreLettres; k++) {
                 if (lettreAPlacer == chevalet_joueur[k]) {
                     plateau_de_jeu[7][7] = lettreAPlacer;
-                    chevalet_joueur[k] = '0'; //suppression de la lettre utilisee pour ne pas pouvoir la remettre une autre fois
+                    chevalet_joueur[k] = 0; //suppression de la lettre utilisee pour ne pas pouvoir la remettre une autre fois
                 }
             }
             if (islower(lettreAPlacer == 0) && isupper(lettreAPlacer == 0)){
@@ -75,8 +75,6 @@ void placementPremiereLettre(char plateau_de_jeu[MAX][MAX]){
     do {
         printf("Saisissez la case dans laquelle vous souhaitez commencer votre mot:\n");
         scanf("%d %d", &i, &j);
-        i+=1;
-        j+=1;
         if (plateau_de_jeu[i][j] != (char)32||plateau_de_jeu[i][j] != (char)38|| plateau_de_jeu[i][j] != (char)64
             || plateau_de_jeu[i][j] != (char)37 || plateau_de_jeu[i][j] != (char)36) {
             printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
@@ -91,7 +89,7 @@ void placementVertical(int nombreLettres, char plateau_de_jeu[MAX][MAX], char ch
         do {
             printf("Saisissez le numero de la case suivante (deuxieme composant de la case)\n");
             scanf("%d", &j); //[j] pour que le mot soit ecrit vers le bas comme [i] ne change pas
-            j+=1;
+            j-=1;
             if (plateau_de_jeu[i][j] != (char)32||plateau_de_jeu[i][j] != (char)38|| plateau_de_jeu[i][j] != (char)64
                 || plateau_de_jeu[i][j] != (char)37 || plateau_de_jeu[i][j] != (char)36) {
                 printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
@@ -133,7 +131,7 @@ void placementHorizontal(int nombreLettres, char plateau_de_jeu[MAX][MAX], char 
         do {
             printf("Saisissez le numero de la case suivante (premier composant de la case (chiffre horizontal))\n");
             scanf("%d", &i); //[i] pour que le mot soit ecrit vers le bas comme [j] ne change pas
-            i+=1;
+            i-=1;
             if (plateau_de_jeu[i][j] != (char)32||plateau_de_jeu[i][j] != (char)38|| plateau_de_jeu[i][j] != (char)64
                 || plateau_de_jeu[i][j] != (char)37 || plateau_de_jeu[i][j] != (char)36) {
                 printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");

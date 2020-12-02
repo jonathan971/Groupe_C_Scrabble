@@ -34,6 +34,9 @@ int main() {
             intialisation_joueur(&Player, &modiftaillephysique, lapioche);
             printf("\t\t\t\t\t\t\t\t\t    DEBUT DE LA PARTIE\n");
             do {
+                /*for(i=5;i<i+6;i++){
+                    plateau_de_jeu[7][i]=(char)32;
+                }*/
                 affichage_tableau_2D(plateau_de_jeu, MAX);
                 printf("\n");
                 for(i=0; i<1;i++) {
