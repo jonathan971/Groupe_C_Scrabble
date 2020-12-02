@@ -26,9 +26,9 @@ Dans ce dossier vous trouverez les sous-fichiers suivants :
 * `joueur_initializer` : Initialise le joueur <br />
 * `TableauDeJeu` : Initalisation et création du plateau de jeu et du chevalet <br />
 * `Pioche` : Initalisation et création de la pioche du jeu <br />
-* `laPioche` : Initialisation de la pioche du jeu
-* `Creation du mot` : Dépot du mot sur le plateau de jeu 
-* `pickJetons` : Prise d'un jeton dans la pioche
+* `laPioche` : Initialisation de la pioche du jeu <br />
+* `Creation du mot` : Dépot du mot sur le plateau de jeu <br />
+* `Verification_chevalet` : Pose le mot sur le tableau, vérifie que ce mot existe, verifie que les lettres du mot sont dans le chevalet du joueur  <br />
 
 ## Amélioration
 Très bientot vous pourrez jouer seul contre un IA...
