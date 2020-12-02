@@ -1,8 +1,33 @@
 #include "Verification_chevalet.h"
-#include <stdio.h>
-#include <ctype.h>
-#define MAX_DECK 7
-#define MAX 15
+void placementPremierMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK]){ //pour le tout premier mot du jeu
+    char sensMot = '0';
+    int nombreLettres = 0;
+    nombreLettres = nombreDeLettres();
+    sensMot = sensDuMot();
+    placementPremiereLettrePremierMot(nombreLettres, plateau_de_jeu, chevalet_joueur);
+    switch (sensMot) {  //placement du mot sur le plateau de jeu
+        case 'v':
+            placementVertical(nombreLettres, plateau_de_jeu, chevalet_joueur);
+        case 'h':
+            placementHorizontal(nombreLettres, plateau_de_jeu, chevalet_joueur);
+            break;
+    }
+}
+
+void placementMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK]){ //pous tous les autres mots du jeu
+    char sensMot = '0';
+    int nombreLettres = 0;
+    nombreLettres = nombreDeLettres();
+    sensMot = sensDuMot();
+    placementPremiereLettre(plateau_de_jeu);
+    switch (sensMot) {  //placement du mot sur le plateau de jeu
+        case 'v':
+            placementVertical(nombreLettres, plateau_de_jeu, chevalet_joueur);
+        case 'h':
+            placementHorizontal(nombreLettres, plateau_de_jeu, chevalet_joueur);
+            break;
+    }
+}
 
 int nombreDeLettres(){
     int nombreLettres = 0;
