@@ -12,8 +12,7 @@ int main() {
     int i,j;
     srand(time(NULL));
     int modiftaillephysique=0,occurrence_point[LIGNES][COLONNES];
-    char alphabet[LIGNES], lapioche[LIGNES+1];
-    leSac( alphabet, lapioche, occurrence_point);
+    char alphabet[LIGNES+1], lapioche[JETONS];
     Joueur Player;
     char plateau_de_jeu[MAX][MAX]={{36,32,32,38,32,32,32,36,32,32,32,38,32,32,36},
                                    {32,64,32,32,32,37,32,32,32,37,32,32,32,64,32},
