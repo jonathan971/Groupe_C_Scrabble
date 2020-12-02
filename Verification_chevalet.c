@@ -120,7 +120,7 @@ void placementHorizontal(int nombreLettres, char plateau_de_jeu[MAX][MAX], char 
     int i = 0, j = 0;
     while (nombreLettres > 0) {
         do {
-            printf("Saisissez le numero de la case suivante (premier composant de la case (chiffre horizontal))");
+            printf("Saisissez le numero de la case suivante (premier composant de la case (chiffre à horizontal))");
             scanf("%d", &i); //[i] pour que le mot soit ecrit vers le bas comme [j] ne change pas
             if (plateau_de_jeu[i][j] != ' ') {
                 printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
