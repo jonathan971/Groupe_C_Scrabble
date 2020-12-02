@@ -173,6 +173,8 @@ void saisieOccurrenceValeurs(const char alphabet[],int occurrence_point[LIGNES][
                 occurrence_point[i][1] = 0;
                 break;
             }
+            default :
+                break;
         }
     }
 }
