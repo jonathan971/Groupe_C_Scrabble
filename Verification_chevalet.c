@@ -31,7 +31,7 @@ void placementMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK])
 
 int nombreDeLettres(){
     int nombreLettres = 0;
-    printf("Combien de lettres souhaitez-vous placer?");
+    printf("Combien de lettres souhaitez-vous placer?\n");
     scanf("%d", &nombreLettres);
     return nombreLettres;
 }
@@ -39,7 +39,7 @@ int nombreDeLettres(){
 char sensDuMot(){
     char sensMot = '0';
     do {
-        printf("Saisissez \"v\" pour placer votre mot a la verticale et \"h\" pour l'horizontale.");
+        printf("Saisissez \"v\" pour placer votre mot a la verticale et \"h\" pour l'horizontale.\n");
         scanf(" %c", &sensMot);
     } while (sensMot != 'v' && sensMot != 'h');
     return sensMot;
@@ -50,7 +50,7 @@ void placementPremiereLettrePremierMot(int nombreLettres, char plateau_de_jeu[MA
     int k = 0;
     do { //verification que la lettre est presente sur le chevalet
         do{ //verification que le caractere est bien une lettre
-            printf("Vous commencez la partie. Saisissez la lettre que vous souhaitez poser sur la case du milieu:");
+            printf("Vous commencez la partie\n. Saisissez la lettre que vous souhaitez poser sur la case du milieu:\n");
             scanf(" %c", &lettreAPlacer);
             for (k = 0; k < nombreLettres; k++) {
                 if (lettreAPlacer == chevalet_joueur[k]) {
@@ -71,7 +71,7 @@ void placementPremiereLettrePremierMot(int nombreLettres, char plateau_de_jeu[MA
 void placementPremiereLettre(char plateau_de_jeu[MAX][MAX]){
     int i = 0, j = 0;
     do {
-        printf("Saisissez la case dans laquelle vous souhaitez commencer votre mot:");
+        printf("Saisissez la case dans laquelle vous souhaitez commencer votre mot:\n");
         scanf("%d %d", &i, &j);
         if (plateau_de_jeu[i][j] != ' ') {
             printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
@@ -98,7 +98,7 @@ void placementAutreLettre(int nombreLettres, int i, int j, char plateau_de_jeu[M
     char lettreAPlacer = '0';
     do { //verification que la lettre est presente sur le chevalet
         do{ //verification que le caractere est bien une lettre
-            printf("Saisissez la lettre que vous souhaitez placer:");
+            printf("Saisissez la lettre que vous souhaitez placer:\n");
             scanf(" %c", &lettreAPlacer);
             for (k = 0; k < nombreLettres; k++) {
                 if (lettreAPlacer == chevalet_joueur[k]) {
@@ -120,7 +120,7 @@ void placementHorizontal(int nombreLettres, char plateau_de_jeu[MAX][MAX], char 
     int i = 0, j = 0;
     while (nombreLettres > 0) {
         do {
-            printf("Saisissez le numero de la case suivante (premier composant de la case)");
+            printf("Saisissez le numero de la case suivante (premier composant de la case (chiffre horizontal))");
             scanf("%d", &i); //[i] pour que le mot soit ecrit vers le bas comme [j] ne change pas
             if (plateau_de_jeu[i][j] != ' ') {
                 printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
