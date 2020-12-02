@@ -197,14 +197,6 @@ void melangeDuSac(char lapioche[]){
 
 void leSacAJetons(char* lapioche,const char* alphabet,int occurrence_point[LIGNES][COLONNES]) {
     int i,j, nbLettres = 0, securite = 0;
-
-
-    for (i = 0; i <LIGNES; i++) {
-        printf("%c", alphabet[i]);
-    }
-    printf("\n");
-
-    // ???????????????????????????
     for (i = 0; i < LIGNES; i++) {
         nbLettres += occurrence_point[i][0];
         for (j = securite; j < nbLettres; j++) {
@@ -213,28 +205,11 @@ void leSacAJetons(char* lapioche,const char* alphabet,int occurrence_point[LIGNE
         }
         securite = nbLettres;
     }
-    // ???????????????????????????
-
     melangeDuSac(lapioche);
 }
 
 void leSac(char *alphabet, char *lapioche, int occurrence_point[LIGNES][COLONNES]) {
     suivitDeLaPioche(alphabet, occurrence_point);
-
-
-    for  (int i = 0; i < LIGNES; i++) {
-        printf("%c", alphabet[i]);
-        for (int j = 0; j < COLONNES; j++) {
-            if (j == 0) {
-                printf("|%d", occurrence_point[i][j]);
-            } else {
-                printf("|%d|\n", occurrence_point[i][j]);
-            }
-        }
-    }
-    printf("\n");
-
-
     leSacAJetons(lapioche, alphabet, occurrence_point);
 }
 char pickJetons(char lapioche[JETONS+1], int* modiftaillephysique){
