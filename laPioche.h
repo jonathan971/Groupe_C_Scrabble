@@ -22,9 +22,9 @@ void suivitDeLaPioche(char alphabet[],int occurrence_point[][COLONNES]);
 
 void melangeDuSac(char lapioche[]);
 
-void leSacAJetons(char lapioche[],const char alphabet[LIGNES],int occurrence_point[LIGNES][COLONNES]);
+void leSacAJetons(char* lapioche,const char* alphabet,int occurrence_point[LIGNES][COLONNES]);
 
-void laPioche(char* alphabet, char* lapioche,int occurrence_point[LIGNES][COLONNES]);
+void leSac(char* alphabet, char* lapioche,int occurrence_point[LIGNES][COLONNES]);
 
 char pickJetons(char lapioche[JETONS+1], int* modiftaillephysique);
 

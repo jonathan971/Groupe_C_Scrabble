@@ -12,18 +12,7 @@ int main() {
     int modiftaillephysique=0,occurrence_point[LIGNES][COLONNES];
     char alphabet[LIGNES], lapioche[LIGNES+1];
     char tableau[MAX_DECK];
-    laPioche( alphabet, lapioche, occurrence_point);
-    for (i = 0; i < LIGNES; i++) {
-        printf("%c", alphabet[i]);
-        for (j = 0; j < COLONNES; j++) {
-            if (j == 0) {
-                printf("|%d", occurrence_point[i][j]);
-            } else {
-                printf("|%d|\n", occurrence_point[i][j]);
-            }
-        }
-    }
-    printf("\n");
+    leSac( alphabet, lapioche, occurrence_point);
     affichagechevalet(tableau, MAX_DECK, occurrence_point, alphabet);
 
     Joueur Player;
