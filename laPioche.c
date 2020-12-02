@@ -200,7 +200,6 @@ void leSacAJetons(char* lapioche,const char* alphabet,int occurrence_point[LIGNE
     for (i = 0; i < LIGNES; i++) {
         nbLettres += occurrence_point[i][0];
         for (j = securite; j < nbLettres; j++) {
-            printf("%c",alphabet[i]);
             lapioche[j]=alphabet[i];
         }
         securite = nbLettres;
@@ -212,7 +211,7 @@ void leSac(char *alphabet, char *lapioche, int occurrence_point[LIGNES][COLONNES
     suivitDeLaPioche(alphabet, occurrence_point);
     leSacAJetons(lapioche, alphabet, occurrence_point);
 }
-char pickJetons(char lapioche[JETONS+1], int* modiftaillephysique){
+char pickJetons(char* lapioche, int* modiftaillephysique){
     int alea;
     char lettre, securite;
     alea=rand()%(JETONS-*modiftaillephysique);

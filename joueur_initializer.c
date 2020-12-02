@@ -13,7 +13,6 @@ void intialisation_joueur(Joueur Player[], int*modiftaillephysique,char lapioche
         printf("Veuillez saisir votre pseudo :\n");
         scanf(" %s",Player[i].nom);
         Player[i].score=0;
-        Player[i].temps=1;
         for(int j=0;j<MAX_DECK-1;j++) {
             Player[i].chevalet_joueur[j]=pickJetons(lapioche, modiftaillephysique);
         }
