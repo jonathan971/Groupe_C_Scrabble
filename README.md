@@ -31,5 +31,5 @@ Dans ce dossier vous trouverez les sous-fichiers suivants :
 * `Verification_chevalet` : Pose le mot sur le tableau, vérifie que ce mot existe, verifie que les lettres du mot sont dans le chevalet du joueur  <br />
 
 ## Amélioration
-Très bientôt vous pourrez jouer seul contre un IA...
+Très bientôt vous pourrez jouer seul contre une IA...
 #####BON JEU !!
