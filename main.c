@@ -71,3 +71,31 @@ int main() {
     }
     return 0;
 }
+
+// le timer : on doit prendre la boucle du timer et la mettre dans la fonction saisir le mot pour que ca fonctionne
+/*#include <time.h>
+#include <stdio.h>
+#define TIMER 2 // en minute
+
+void timer(clock_t duree){
+    clock_t time_out = clock();
+    while((time_out + duree) > clock());
+}
+
+
+int main(){
+    int i;
+    for(i = 0; i <TIMER*60; i++){
+        timer(1000);
+        if(i==((TIMER*60)/2)-1){
+            printf("Il vous reste %d secondes.\n",(TIMER*60)-(i+1));
+        }
+        if(i==((TIMER*60)*0.75)-1){
+            printf("Il vous reste %d secondes.\n",(TIMER*60)-(i+1));
+        }
+        if(i==((TIMER*60)*11/12)-1){
+            printf("Il vous reste %d secondes.\n",(TIMER*60)-(i+1));
+        }
+    }
+    return 0;
+}*/
