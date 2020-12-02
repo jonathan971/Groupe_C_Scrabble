@@ -6,7 +6,7 @@
 #define MAX_DECK 8
 typedef struct {
     char nom[MAX_PSEUDO],chevalet_joueur[MAX_DECK];
-    int score, temps;
+    int score;
 }Joueur;
 
 #ifndef GROUPE_C_SCRABBLE_JOUEUR_INITIALIZER_H

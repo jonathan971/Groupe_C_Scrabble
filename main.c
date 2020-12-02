@@ -13,6 +13,8 @@ int main() {
     srand(time(NULL));
     int modiftaillephysique=0,occurrence_point[LIGNES][COLONNES];
     char alphabet[LIGNES+1], lapioche[JETONS];
+
+    leSac(alphabet,lapioche,occurrence_point);
     Joueur Player;
     char plateau_de_jeu[MAX][MAX]={{36,32,32,38,32,32,32,36,32,32,32,38,32,32,36},
                                    {32,64,32,32,32,37,32,32,32,37,32,32,32,64,32},
@@ -41,9 +43,9 @@ int main() {
                     printf("%s, a vous :\n", Player.nom);
                     affichagechevalet(Player.chevalet_joueur, MAX_DECK, occurrence_point,alphabet);
                     printf("\n");
-                    placementPremierMot(plateau_de_jeu, Player.chevalet_joueur);
+                    //placementPremierMot(plateau_de_jeu, Player.chevalet_joueur);
                     //il va falloir une boucle pour tous les mots des joueurs pour la partie
-                    placementMot(plateau_de_jeu, Player.chevalet_joueur);
+                    //placementMot(plateau_de_jeu, Player.chevalet_joueur);
                     //verification de l'existence de(s) nouveau(x) mot(s) cree(s) peut-etre en faisant une boucle do while et en demandant a la fin
                     //a un autre joueur (le suivant ou quoi) de confirmer le(s) mot(s) sinon il doit tout refaire
                     //ca reste toujours plus simple que d'ecrire tout le dictionnaire dans notre programme vu que ya pas de fonction <dico.h> ou quoi
