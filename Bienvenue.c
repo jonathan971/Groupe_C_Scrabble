@@ -39,7 +39,7 @@ void afficherMenuPendantPartie(unsigned int *choix){
             printf("\n");
             switch (*choix) {
                 case 1:
-                    //reprendre le jeu --> remettre le chronometre en marche
+                    *choix=7;
                 case 2:
                     regle_jeu(choix);
                     do{

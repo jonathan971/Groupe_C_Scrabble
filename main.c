@@ -5,7 +5,7 @@
 #include "Verification_chevalet.h"
 
 int main() {
-    unsigned int choix,jeu=1;
+    unsigned int choix,jeu=1,nbr_lettre=0;
     int i,j;
     srand(time(NULL));
     int modiftaillephysique=0,occurrence_point[LIGNES][COLONNES];
@@ -34,30 +34,25 @@ int main() {
             intialisation_joueur(&Player, &modiftaillephysique, lapioche);
             printf("\t\t\t\t\t\t\t\t\t    DEBUT DE LA PARTIE\n");
             do {
-                /*for(i=5;i<i+6;i++){
-                    plateau_de_jeu[7][i]=(char)32;
-                }*/
                 affichage_tableau_2D(plateau_de_jeu, MAX);
                 printf("\n");
                 for(i=0; i<1;i++) {
                     printf("%s, a vous :\n", Player.nom);
-                    affichagechevalet(Player.chevalet_joueur, MAX_DECK, occurrence_point,alphabet);
+                    affichagechevalet(Player.chevalet_joueur, MAX_DECK, occurrence_point, alphabet);
                     printf("\n");
-                    placementPremierMot(plateau_de_jeu, Player.chevalet_joueur);
+                    //afficherMenuPendantPartie(&choix);
+                        //while (choix==7){
+                            placementPremierMot(plateau_de_jeu, Player.chevalet_joueur, &nbr_lettre);
+                            affichage_tableau_2D(plateau_de_jeu, MAX);
+                            //rechargement du chevalet
+                            i++;
+                        //}
+                    }
                     //il va falloir une boucle pour tous les mots des joueurs pour la partie
-                    placementMot(plateau_de_jeu, Player.chevalet_joueur);
+                    //placementMot(plateau_de_jeu, Player.chevalet_joueur,&nbr_lettre);
                     //verification de l'existence de(s) nouveau(x) mot(s) cree(s) peut-etre en faisant une boucle do while et en demandant a la fin
                     //a un autre joueur (le suivant ou quoi) de confirmer le(s) mot(s) sinon il doit tout refaire
                     //ca reste toujours plus simple que d'ecrire tout le dictionnaire dans notre programme vu que ya pas de fonction <dico.h> ou quoi
-                }
-                afficherMenuPendantPartie(&choix);
-                /*do {
-                    if (choix == 2) {
-                        do {
-                    }while(choix==1 && (compteur_de_lettre>1 && compteur_de_lettre<7));
-                        //fonction qui recharge le chevalet
-                    }
-                }while (choix == 2);*/
             }while (jeu!=1);//jeu fini (il faudra changer la valeur à 0 quand on aura tout fini)
             break;
         case 2:
