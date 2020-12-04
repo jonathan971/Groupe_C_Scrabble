@@ -5,13 +5,13 @@
 #define MAX_DECK 8
 #define MAX 15
 
-int nombreDeLettres();
+void nombreDeLettres(unsigned int *pnombreLettres);
 char sensDuMot();
-void placementPremiereLettrePremierMot(unsigned int *pnombreLettres, char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],int taille_logique_chevalet);
-void placementPremiereLettre(char plateau_de_jeu[MAX][MAX]);
-void placementVertical(unsigned int *pnombreLettres, char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK]);
-void placementHorizontal(unsigned int *pnombreLettres, char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK]);
-void placementAutreLettre(unsigned int *pnombreLettres, int i, int j, char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],int taille_logique_chevalet);
+void placementPremiereLettrePremierMot( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],int taille_logique_chevalet);
+void placementPremiereLettre(char plateau_de_jeu[MAX][MAX],int taille_logique_chevalet,char chevalet_joueur[MAX_DECK]);
+void placementVertical( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK]);
+void placementHorizontal( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK]);
+void placementAutreLettre( int i, int j, char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],int taille_logique_chevalet);
 void placementPremierMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],unsigned int *pnombreLettres);
 void placementMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],unsigned int *pnombreLettres);
 

@@ -12,6 +12,6 @@ typedef struct {
 #ifndef GROUPE_C_SCRABBLE_JOUEUR_INITIALIZER_H
 #define GROUPE_C_SCRABBLE_JOUEUR_INITIALIZER_H
 
-void intialisation_joueur(Joueur Player[], int*modiftaillephysique,char lapioche[]);
+void intialisation_joueur(Joueur Player[], int*modiftaillephysique,char lapioche[],unsigned int *nb_joueur);
 
 #endif //GROUPE_C_SCRABBLE_JOUEUR_INITIALIZER_H

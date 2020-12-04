@@ -5,14 +5,14 @@
 #include "Verification_chevalet.h"
 
 int main() {
-    unsigned int choix,jeu=1,nbr_lettre=0;
-    int i,j;
+    unsigned int choix,jeu=1,nbr_lettre=0,nb_player=0;
+    int i=0,j=0;
     srand(time(NULL));
     int modiftaillephysique=0,occurrence_point[LIGNES][COLONNES];
     char alphabet[LIGNES+1], lapioche[JETONS];
 
     leSac(alphabet,lapioche,occurrence_point);
-    Joueur Player;
+    Joueur Player[4]={0};
     char plateau_de_jeu[MAX][MAX]={{36,32,32,38,32,32,32,36,32,32,32,38,32,32,36},
                                    {32,64,32,32,32,37,32,32,32,37,32,32,32,64,32},
                                    {32,32,64,32,32,32,38,32,38,32,32,32,64,32,32},
@@ -31,25 +31,36 @@ int main() {
     bienvenue_jeu(&choix);
     switch (choix) {
         case 1:
-            intialisation_joueur(&Player, &modiftaillephysique, lapioche);
+            intialisation_joueur(Player, &modiftaillephysique, lapioche,&nb_player);
             printf("\t\t\t\t\t\t\t\t\t    DEBUT DE LA PARTIE\n");
             do {
                 affichage_tableau_2D(plateau_de_jeu, MAX);
                 printf("\n");
-                for(i=0; i<1;i++) {
-                    printf("%s, a vous :\n", Player.nom);
-                    affichagechevalet(Player.chevalet_joueur, MAX_DECK, occurrence_point, alphabet);
+                for(i=0; i<nb_player;i++) {
+                    if (i>=1) {
+                        affichage_tableau_2D(plateau_de_jeu, MAX);
+                        printf("\n");
+                    }
+                    printf("%s, a vous :\n", Player[i].nom);
+                    affichagechevalet(Player[i].chevalet_joueur, MAX_DECK, occurrence_point, alphabet);
                     printf("\n");
                     //afficherMenuPendantPartie(&choix);
                         //while (choix==7){
-                            placementPremierMot(plateau_de_jeu, Player.chevalet_joueur, &nbr_lettre);
-                            affichage_tableau_2D(plateau_de_jeu, MAX);
+                        if(i==0) {
+                            placementPremierMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre);
+                        }
+                        //mettre une pause
                             //rechargement du chevalet
-                            i++;
                         //}
+                        if (i>=1){
+                            placementMot(plateau_de_jeu, Player[i].chevalet_joueur,&nbr_lettre);
+                        }
                     }
+                printf("Fin jeu : tapper 1\n"
+                       "Continuer jeu : tapper 0\n"),
+                       scanf("%d",&jeu);//faudra juste réafficher la pause et mettre continuer
                     //il va falloir une boucle pour tous les mots des joueurs pour la partie
-                    //placementMot(plateau_de_jeu, Player.chevalet_joueur,&nbr_lettre);
+
                     //verification de l'existence de(s) nouveau(x) mot(s) cree(s) peut-etre en faisant une boucle do while et en demandant a la fin
                     //a un autre joueur (le suivant ou quoi) de confirmer le(s) mot(s) sinon il doit tout refaire
                     //ca reste toujours plus simple que d'ecrire tout le dictionnaire dans notre programme vu que ya pas de fonction <dico.h> ou quoi
