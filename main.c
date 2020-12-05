@@ -48,11 +48,12 @@ int main() {
                                               Player[i].chevalet_joueur, occurrence_point, alphabet);
                     while (choix == 7) {
                         if (i == 0) {
-                            placementPremierMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre);
+                            Player[i].score+=placementPremierMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);
                         }
                         if (i >= 1) {
-                            placementMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre);
+                            Player[i].score+=placementMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);
                         }
+                        printf("Score : %d\n",Player[i].score);
                         recharge_chevalet(Player, &modiftaillephysique, lapioche,&i);
                         choix=0;
                     }
