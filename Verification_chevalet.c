@@ -73,6 +73,12 @@ void nombreDeLettres(unsigned int *pnombreLettres) {
     do {
         printf("Combien de lettres souhaitez-vous placer?\n");
         scanf("%d", pnombreLettres);
+        if(*pnombreLettres < 2){
+            printf("Vous ne pouvez pas placer une lettre. Réésayez !\n");
+        }
+        if(*pnombreLettres > 7){
+            printf("Votre chevalet est composé de sept jetons. Comment voulez-vous placer plus de sept jetons !! Réésayez !\n");
+        }
     } while (*pnombreLettres < 2 || *pnombreLettres > 7);
 }
 
@@ -129,17 +135,17 @@ void placementPremiereLettre(char plateau_de_jeu[MAX][MAX],int taille_logique_ch
     do {  //verification que le caractere est bien une lettre
         do {
             do {
-                printf("Saisissez la case dans laquelle vous souhaitez commencer votre mot: (ORDRE : abscisse/ordonnée)\n");
+                printf("Saisissez la case dans laquelle vous souhaitez commencer votre mot: (ORDRE : colonne/ligne)\n");
                 scanf("%d %d", &i, &j);
                 if(plateau_de_jeu[i][j] < e && plateau_de_jeu[i][j] > b){
                     printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
                 }
-            }while (plateau_de_jeu[i][j] < e && plateau_de_jeu[i][j] > b);
+            }while(plateau_de_jeu[i][j] < e && plateau_de_jeu[i][j] > b);
             printf("Saisissez la lettre que vous souhaitez poser sur la case du milieu (P.S :(Ligne = 8; Colonne = 7)):\n");
             scanf(" %c", &lettreAPlacer);
             for (k = 0; k < taille_logique_chevalet; k++) {
                 while (f <= 100) {
-                    printf("Recherche du mot : %d %c \n", f, 37);
+                    printf("Recherche de la lettre : %d %c \n", f, 37);
                     f += 20;
                 }
                 if (lettreAPlacer == chevalet_joueur[k]) {//verification que la lettre est presente sur le chevalet
@@ -172,14 +178,14 @@ void placementVertical( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_
            "Saisissez le numero de la colonne (A=0 B=1...)\n");
     scanf("%d", &j);
     do {
-        printf("Saisissez le numero de la case suivante (l'ordonnée)\n");
+        printf("Saisissez le numero de la ligne\n");
         scanf("%d", &i); //[i] pour que le mot soit ecrit vers le bas comme [j] ne change pas
         i -= 1;
         if (plateau_de_jeu[i][j] >= e && plateau_de_jeu[i][j] <= b) {
             printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
         }
         placementAutreLettre(i, j, plateau_de_jeu, chevalet_joueur, MAX_DECK);
-    } while (plateau_de_jeu[i][j] <= e && plateau_de_jeu[i][j] >= b);
+    } while (plateau_de_jeu[i][j] >= e && plateau_de_jeu[i][j] <= b);
 }
 
 void placementAutreLettre( int i, int j, char plateau_de_jeu[MAX][MAX],

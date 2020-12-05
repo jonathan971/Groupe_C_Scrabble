@@ -28,7 +28,7 @@ void regle_jeu(unsigned int *choix) {
             case 1 :
                 printf("1. Généralités\n"
                        "Le Scrabble classique est un jeu de lettres qui se pratique à deux, trois ou quatre joueurs. Les parties opposant deux joueurs, assis l’un en face de l’autre, sont les seules pratiquées en compétition, c'est pourquoi le présent règlement ne traite que de celles-ci, mais les règles suivantes sont facilement applicables aux parties à trois ou quatre joueurs.\n"
-                       "Le jeu consiste à former des mots entrecroisés sur une grille avec des lettres de valeurs différentes, les cases de couleur de la grille permettant de multiplier la valeur des lettres ou des mots. Le gagnant est celui qui cumule le plus grand nombre de points à l'issue de la partie.");
+                       "Le jeu consiste à former des mots entrecroisés sur une grille avec des lettres de valeurs différentes, les cases de couleur de la grille permettant de multiplier la valeur des lettres ou des mots. Le gagnant est celui qui cumule le plus grand nombre de points à l'issue de la partie.\n");
                 retour(choix);
                 break;
 
@@ -247,18 +247,20 @@ void retour(unsigned int *choix){
             *choix=0;
 
             printf("\n"
-                   "\n"
                    "Revenir au sommaire?\n");
             printf("1-Oui\n");
             printf("2-Non\n");
             scanf("%d",choix);}while (*choix>2);
-        if(*choix==1){
+        switch (*choix) {
+            case 1:
             *choix=0;
             regle_jeu(choix);
-        }
-        else if (*choix==2){
-            *choix=0;
-            bienvenue_jeu(choix);
+                break;
+            case 2:
+                *choix=0;
+                bienvenue_jeu(choix);
+            break;
+            default:break;
         }
     }while (*choix==1);
 }

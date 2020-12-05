@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "Regle.h"
 #include "Bienvenue.h"
 #include "laPioche.h"
 #include "Verification_chevalet.h"
@@ -37,32 +36,34 @@ int main() {
                 affichage_tableau_2D(plateau_de_jeu, MAX);
                 printf("\n");
                 for(i=0; i<nb_player;i++) {
-                    if (i>=1) {
+                    if (i >= 1) {
                         affichage_tableau_2D(plateau_de_jeu, MAX);
                         printf("\n");
                     }
                     printf("%s, a vous :\n", Player[i].nom);
                     affichagechevalet(Player[i].chevalet_joueur, MAX_DECK, occurrence_point, alphabet);
                     printf("\n");
-                    //afficherMenuPendantPartie(&choix);
-                        //while (choix==7){
-                        if(i==0) {
+                    choix=0;
+                    afficherMenuPendantPartie(&choix, &i, Player, &modiftaillephysique, lapioche, MAX_DECK,
+                                              Player[i].chevalet_joueur, occurrence_point, alphabet);
+                    while (choix == 7) {
+                        if (i == 0) {
                             placementPremierMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre);
                         }
-                        //mettre une pause
-                            //rechargement du chevalet
-                        //}
-                        if (i>=1){
-                            placementMot(plateau_de_jeu, Player[i].chevalet_joueur,&nbr_lettre);
+                        if (i >= 1) {
+                            placementMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre);
                         }
+                        recharge_chevalet(Player, &modiftaillephysique, lapioche,&i);
+                        choix=0;
                     }
-                printf("Fin jeu : tapper 1\n"
-                       "Continuer jeu : tapper 0\n"),
-                       scanf("%d",&jeu);//faudra juste réafficher la pause et mettre continuer
-                    //il va falloir une boucle pour tous les mots des joueurs pour la partie
+                }
 
+                        printf("Fin jeu : tapper 1\n"
+                               "Continuer jeu : tapper 0\n"),
+                                scanf("%d", &jeu);
+
+                //faudra juste réafficher la pause et mettre continuer
                     //verification de l'existence de(s) nouveau(x) mot(s) cree(s) peut-etre en faisant une boucle do while et en demandant a la fin
-                    //a un autre joueur (le suivant ou quoi) de confirmer le(s) mot(s) sinon il doit tout refaire
                     //ca reste toujours plus simple que d'ecrire tout le dictionnaire dans notre programme vu que ya pas de fonction <dico.h> ou quoi
             }while (jeu!=1);//jeu fini (il faudra changer la valeur à 0 quand on aura tout fini)
             break;
@@ -73,7 +74,6 @@ int main() {
         case 3:
             credits(&choix);
         case 4:
-            break;
         default:break;
     }
     return 0;
