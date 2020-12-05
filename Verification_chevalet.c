@@ -181,11 +181,11 @@ void placementVertical( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_
         printf("Saisissez le numero de la ligne\n");
         scanf("%d", &i); //[i] pour que le mot soit ecrit vers le bas comme [j] ne change pas
         i -= 1;
-        if (plateau_de_jeu[i][j] >= e && plateau_de_jeu[i][j] <= b) {
+        if (plateau_de_jeu[i][j] <= e && plateau_de_jeu[i][j] >= b) {
             printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
         }
         placementAutreLettre(i, j, plateau_de_jeu, chevalet_joueur, MAX_DECK);
-    } while (plateau_de_jeu[i][j] >= e && plateau_de_jeu[i][j] <= b);
+    } while (plateau_de_jeu[i][j] <= e && plateau_de_jeu[i][j] >= b);
 }
 
 void placementAutreLettre( int i, int j, char plateau_de_jeu[MAX][MAX],
@@ -233,7 +233,7 @@ void placementHorizontal( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MA
         printf("Saisissez le numero de la case suivante (l'abscisse)\n");
         scanf("%d", &j); //[j] pour que le mot soit ecrit vers le bas comme [i] ne change pas
         j -= 1;
-        if (plateau_de_jeu[i][j] > e && plateau_de_jeu[i][j] < b) {
+        if (plateau_de_jeu[i][j] <= e && plateau_de_jeu[i][j] >= b) {
             printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
         }
         placementAutreLettre(i, j, plateau_de_jeu, chevalet_joueur, MAX_DECK);

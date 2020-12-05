@@ -62,7 +62,7 @@ void echange_chevalet_pioche(Joueur Player[], int *modiftaillephysique, char lap
                         Player[*pi].chevalet_joueur[k] = lettre1;
                         lapioche[FIN_PIOCHE+1]=lettre2;
                         printf("Changement réalisé avec succès\n"
-                               "Vous verrez votre nouveau chevalet au tour prochain\n");
+                               "Vous verrez votre nouveau chevalet au tour prochain\n\n");
                         k = taille_logique_chevalet;
                         valide = 1;
                     }
