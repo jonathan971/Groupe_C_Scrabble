@@ -65,7 +65,7 @@ void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int
                 case 3:
                     sauvegarde(Player, plateau_de_jeu, lapioche);
                     //Si la sauvegarde a été effectué correctement affiche ça :
-                    //printf("Sauvegarde reéalisé avec SUCCES");
+                    //printf("Sauvegarde réalisé avec SUCCES");
                     break;
                 default:break;
             }
