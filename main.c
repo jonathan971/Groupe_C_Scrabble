@@ -65,8 +65,6 @@ int main() {
                                 scanf("%d", &jeu);
 
                 //faudra juste réafficher la pause et mettre continuer
-                    //verification de l'existence de(s) nouveau(x) mot(s) cree(s) peut-etre en faisant une boucle do while et en demandant a la fin
-                    //ca reste toujours plus simple que d'ecrire tout le dictionnaire dans notre programme vu que ya pas de fonction <dico.h> ou quoi
             }while (jeu!=1);//jeu fini (il faudra changer la valeur à 0 quand on aura tout fini)
             break;
         case 2:

@@ -61,7 +61,7 @@ char sensDuMot() {
 
 int placementPremiereLettrePremierMot(char plateau_de_jeu[MAX][MAX],
                                        char chevalet_joueur[MAX_DECK], int taille_logique_chevalet,
-                                       char* alphabet, int occurrence_point[][COLONNES]) {
+                                       char* alphabet, int occurrence_point[][COLONNES],int*i,int*j) {
     char lettreAPlacer = 0;
     int k = 0, f = 0, valide = 0,score;
     do {  //verification que le caractere est bien une lettre
@@ -70,10 +70,8 @@ int placementPremiereLettrePremierMot(char plateau_de_jeu[MAX][MAX],
             printf("Saisissez la lettre que vous souhaitez poser sur la case du milieu (P.S :(Ligne = 8; Colonne = 7)):\n");
             scanf(" %c", &lettreAPlacer);
             for (k = 0; k < taille_logique_chevalet; k++) {
-                /*while (f <= 100) {
-                    printf("Recherche du mot : %d %c \n", f, 37);
-                    f += 20;
-                }*/
+                *i=7;
+                *j=7;
                 if (lettreAPlacer == chevalet_joueur[k]) {//verification que la lettre est presente sur le chevalet
                     printf("Le caractere saisi a été trouvé !!\n");
                     score=bonusPlateau(7,7, plateau_de_jeu, lettreAPlacer, alphabet, occurrence_point);
@@ -100,7 +98,7 @@ int placementPremiereLettrePremierMot(char plateau_de_jeu[MAX][MAX],
 }
 
 int placementPremiereLettre(char plateau_de_jeu[MAX][MAX],int taille_logique_chevalet,
-                            char chevalet_joueur[MAX_DECK], char*alphabet, int occurrence_point[][COLONNES]) {
+                            char chevalet_joueur[MAX_DECK], char*alphabet, int occurrence_point[][COLONNES],int*o,int*p) {
     char lettreAPlacer = 0;
     int k, valide = 0,i=0,j=0,score;
     char e = 65, b = 90; //J'ai pas compter le jocker
@@ -110,8 +108,10 @@ int placementPremiereLettre(char plateau_de_jeu[MAX][MAX],int taille_logique_che
                 printf("Saisissez le numero de ligne\n");
                 scanf(" %d", &i);
                 i--;
+                *o=i;
                 printf("Saisissez le numero de colonne\n");
                 scanf("%d",&j);
+                *p=j;
                 if(plateau_de_jeu[i][j] < e && plateau_de_jeu[i][j] > b){
                     printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
                 }
@@ -143,12 +143,13 @@ int placementPremiereLettre(char plateau_de_jeu[MAX][MAX],int taille_logique_che
     return score;
 }
 
-int placementVertical( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],char* alphabet,int occurrence_point[][COLONNES]) {
-    int i = 0, j = 0,score;
+int placementVertical( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],char* alphabet,int occurrence_point[][COLONNES], int j) {
+    int i = 0,score;
     char e = 65, b = 90; //J'ai pas compter le jocker
-    printf("\nProchaine lettre\n"
+    printf("\nProchaine lettre\n");
+    /*printf("\nProchaine lettre\n"
            "Saisissez le numero de la colonne (A=0 B=1...)\n");
-    scanf("%d", &j);
+    scanf("%d", &j);*/
     do {
         printf("Saisissez le numero de la ligne\n");
         scanf("%d", &i); //[i] pour que le mot soit ecrit vers le bas comme [j] ne change pas
@@ -162,13 +163,13 @@ int placementVertical( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_D
 }
 
 
-int placementHorizontal( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],char* alphabet,int occurrence_point[][COLONNES]) {
-    int i = 0, j = 0,score;
+int placementHorizontal( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],char* alphabet,int occurrence_point[][COLONNES], int i) {
+    int j = 0,score;
     char e = 65, b = 90; //J'ai pas compter le jocker
-    printf("\nProchaine lettre\n"
+    printf("\nProchaine lettre\n");
+    /*printf("\nProchaine lettre\n"
            "Saisissez le numero de ligne \n");
-    scanf("%d", &i);
-    i--;
+    scanf("%d", &i);*/
     do {
         printf("Saisissez le numero de colonne (A=0 B=1...)\n");
         scanf("%d", &j);
@@ -185,13 +186,13 @@ int placementPremierMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_
     char sensMot = 0;
     nombreDeLettres(pnombreLettres);
     sensMot = sensDuMot();
-    int score=0;
+    int score=0,i,j;
     switch (sensMot) {  //placement du mot sur le plateau de jeu
         case 'v':
-            score+=placementPremiereLettrePremierMot(plateau_de_jeu,chevalet_joueur,MAX_DECK, alphabet, occurrence_point);
+            score+=placementPremiereLettrePremierMot( plateau_de_jeu, chevalet_joueur, MAX_DECK,alphabet,occurrence_point,&i,&j);
             *pnombreLettres-=1;
             do {
-                score+=placementVertical(plateau_de_jeu, chevalet_joueur,alphabet, occurrence_point);
+                score+=placementVertical(plateau_de_jeu, chevalet_joueur,alphabet,occurrence_point,j);
                 *pnombreLettres-=1;
                 if(*pnombreLettres==0){
                     printf("Le tour est terminé !\n");
@@ -200,10 +201,10 @@ int placementPremierMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_
 
             break;
         case 'h':
-            score+=placementPremiereLettrePremierMot( plateau_de_jeu, chevalet_joueur, MAX_DECK,alphabet,occurrence_point);
+            score+=placementPremiereLettrePremierMot( plateau_de_jeu, chevalet_joueur, MAX_DECK,alphabet,occurrence_point,&i,&j);
             *pnombreLettres-=1;
             do {
-                score+=placementHorizontal(plateau_de_jeu, chevalet_joueur,alphabet,occurrence_point);
+                score+=placementHorizontal( plateau_de_jeu, chevalet_joueur,alphabet,occurrence_point,i);
                 *pnombreLettres-=1;
                 if(*pnombreLettres==0){
                     printf("Le tour est terminé !\n");
@@ -219,16 +220,16 @@ int placementPremierMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_
 
 int placementMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],unsigned int *pnombreLettres, char*alphabet, int occurrence_point[][COLONNES]) { //pous tous les autres mots du jeu
     char sensMot = '0';
-    int score=0;
+    int score=0, i,j;
     nombreDeLettres(pnombreLettres);
     sensMot = sensDuMot();
 
     switch (sensMot) {  //placement du mot sur le plateau de jeu
         case 'v':
-            score+=placementPremiereLettre(plateau_de_jeu,MAX_DECK,chevalet_joueur, alphabet, occurrence_point);
+            score+=placementPremiereLettre(plateau_de_jeu,MAX_DECK,chevalet_joueur, alphabet, occurrence_point, &i, &j);
             *pnombreLettres-=1;
             do {
-                score+=placementVertical(plateau_de_jeu, chevalet_joueur,alphabet,occurrence_point);
+                score+=placementVertical(plateau_de_jeu, chevalet_joueur,alphabet,occurrence_point,j);
                 *pnombreLettres-=1;
                 if(*pnombreLettres==0){
                     printf("Le tour est terminé !\n");
@@ -236,10 +237,10 @@ int placementMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],u
             } while (*pnombreLettres != 0);
             break;
         case 'h':
-            score+=placementPremiereLettre(plateau_de_jeu,MAX_DECK,chevalet_joueur, alphabet, occurrence_point);
+            score+=placementPremiereLettre(plateau_de_jeu,MAX_DECK,chevalet_joueur, alphabet, occurrence_point,&i,&j);
             *pnombreLettres-=1;
             do {
-                score+=placementHorizontal( plateau_de_jeu, chevalet_joueur,alphabet,occurrence_point);
+                score+=placementHorizontal( plateau_de_jeu, chevalet_joueur,alphabet,occurrence_point,i);
                 *pnombreLettres-=1;
                 if(*pnombreLettres==0){
                     printf("Le tour est terminé !\n");
