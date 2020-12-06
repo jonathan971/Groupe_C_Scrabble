@@ -14,7 +14,7 @@ typedef struct {
 #ifndef GROUPE_C_SCRABBLE_JOUEUR_INITIALIZER_H
 #define GROUPE_C_SCRABBLE_JOUEUR_INITIALIZER_H
 
-void intialisation_joueur(Joueur Player[], int*modiftaillephysique,char lapioche[],unsigned int *nb_joueur);
+void intialisation_joueur(Joueur Player[], int*modiftaillephysique,char lapioche[],int *nb_joueur);
 void recharge_chevalet(Joueur Player[], int*modiftaillephysique,char lapioche[],int *pi);
 void echange_chevalet_pioche(Joueur Player[], int *modiftaillephysique, char lapioche[], int taille_logique_chevalet,
                              char chevalet_joueur[MAX_DECK], const char *alphabet, int *i,char pchoixx[MAX_CHOIX],

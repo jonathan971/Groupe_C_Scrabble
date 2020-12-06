@@ -1,7 +1,7 @@
 #include "joueur_initializer.h"
 
 //initialisation du joueur
-void intialisation_joueur(Joueur Player[], int *modiftaillephysique, char lapioche[], unsigned int *nb_joueur) {
+void intialisation_joueur(Joueur Player[], int *modiftaillephysique, char lapioche[], int *nb_joueur) {
     int i;
     do {
         printf("Combien il y a t-il de joueur ? (Entre 2 et 4 joueurs)\n");

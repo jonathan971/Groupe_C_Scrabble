@@ -5,8 +5,8 @@
 #include "sauvegarde.h"
 
 int main() {
-    unsigned int choix, jeu = 1, nb_player = 0;
-    int i = 0, j = 0, sauvegarde,nbr_lettre = 0;
+    unsigned int choix, jeu = 1,nbr_lettre = 0;
+    int i = 0, j = 0, sauvegarde,nb_player = 0;
     srand(time(NULL));
     int modiftaillephysique = 0, occurrence_point[LIGNES][COLONNES];
     char alphabet[LIGNES + 1], lapioche[JETONS];
@@ -62,7 +62,7 @@ int main() {
                     printf("\n");
                     choix = 0;
                     afficherMenuPendantPartie(&choix, &i, Player, &modiftaillephysique, lapioche, MAX_DECK,
-                                              Player[i].chevalet_joueur, occurrence_point, alphabet);
+                                              Player[i].chevalet_joueur, occurrence_point, alphabet, plateau_de_jeu, &nb_player, &i);
                     while (choix == 7) {
                         if (j == 0) {
                             Player[i].score += placementPremierMot(plateau_de_jeu, Player[i].chevalet_joueur,
@@ -97,10 +97,6 @@ int main() {
                         jeu=0;
                     }
                 }
-
-                //faudra juste réafficher la pause et mettre continuer
-                //verification de l'existence de(s) nouveau(x) mot(s) cree(s) peut-etre en faisant une boucle do while et en demandant a la fin
-                //ca reste toujours plus simple que d'ecrire tout le dictionnaire dans notre programme vu que ya pas de fonction <dico.h> ou quoi
             } while (jeu != 0);
             break;
         case 2:
