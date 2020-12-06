@@ -21,6 +21,7 @@ void intialisation_joueur(Joueur Player[], int *modiftaillephysique, char lapioc
     }
 }
 
+//Lorsque le joueur aposé ses lettres, il doit re-remplir son chevalet et donc combler les lettres utilisés remplacer par "0" par de nouvelles lettres
 void recharge_chevalet(Joueur Player[], int *modiftaillephysique, char lapioche[JETONS],const int *pi) {
     int k;
     for (k = 0; k < JETONS; k++) {
@@ -39,6 +40,7 @@ void recharge_chevalet(Joueur Player[], int *modiftaillephysique, char lapioche[
     }
 }
 
+//Lorsque le joueur a un chevalet qui ne correspond pas à ses attentes, il peut changer les lettres de son chevalet
 void echange_chevalet_pioche(Joueur Player[], int *modiftaillephysique, char lapioche[], int taille_logique_chevalet,
                              const char chevalet_joueur[MAX_DECK], const char *alphabet, int *pi,char pchoixx[MAX_CHOIX],char pchoix1[MAX_CHOIX] , char pchoix2[MAX_CHOIX]) {
     char lettre1 = 0, lettre2 = 0;

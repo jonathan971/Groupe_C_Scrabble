@@ -60,12 +60,10 @@ int main() {
                     }
                 }
 
-                printf("Fin jeu : tapper 1\n"
-                       "Continuer jeu : tapper 0\n"),
+                printf("Fin jeu : tapper 0\n"
+                       "Continuer jeu : tapper 1\n"),
                         scanf("%d", &jeu);
-
-                //faudra juste réafficher la pause et mettre continuer
-            }while (jeu!=1);//jeu fini (il faudra changer la valeur à 0 quand on aura tout fini)
+            }while (jeu!=0);
             break;
         case 2:
             choix=0;

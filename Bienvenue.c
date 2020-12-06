@@ -1,5 +1,6 @@
 #include "Bienvenue.h"
-void bienvenue_jeu(unsigned int *choix){//Affichage du Menu avec le style d'affichage
+//Affichage du Menu avec le style d'affichage
+void bienvenue_jeu(unsigned int *choix){
     for (int i = 0; i < 20; ++i) {
         printf("_");
     }
@@ -19,6 +20,7 @@ void bienvenue_jeu(unsigned int *choix){//Affichage du Menu avec le style d'affi
     scanf("%d",choix);
 }
 
+//Affichage du Menu pendant le tour des joueurs
 void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int *modiftaillephysique,
                                char lapioche[],int taille_logique_chevalet,char chevalet_joueur[MAX_DECK],
                                int occurence_point[LIGNES][COLONNES], const char* alphabet,
@@ -64,9 +66,6 @@ void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int
                                 *choix = 7;
                         }}while (*choix>2);
                     break;
-                case 3:
-                    //sauvegarder(Player, plateau_de_jeu, lapioche, nb_player, i, (const int *) &modiftaillephysique);
-                    break;
                 default:break;
             }
             break;
@@ -105,9 +104,8 @@ void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int
             afficherMenuPendantPartie(choix,pi,Player, modiftaillephysique, lapioche,MAX_DECK, chevalet_joueur,
                                       occurence_point, alphabet,plateau_de_jeu,nb_player,i);
             break;
-        case 0:
+        default:
             break;
-        default:break;
     }
 }
 

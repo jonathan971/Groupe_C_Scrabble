@@ -1,6 +1,6 @@
 #include "TableauDeJeu.h"
 
-
+//Affichage en couleur du plateau de jeu (sous IOS uniquement)
 void affichage_tableau_2D(char tab[MAX][MAX], int taille_logique){// Affichage lignes et colonnes
     int i,j;
     puts("\n      A     B     C     D     E     F     G     H     I     J     K     L     M     N     O");
@@ -51,6 +51,8 @@ void affichage_tableau_2D(char tab[MAX][MAX], int taille_logique){// Affichage l
     }
 }
 
+
+//Affichage du chevalet du joueur
 void affichagechevalet(char tableau[], int taille_logique_deck, int occurence_point[LIGNES][COLONNES], const char* alphabet){
     int i,j,scorelettre=0;
     printf("\t\t");

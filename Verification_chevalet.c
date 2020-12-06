@@ -1,5 +1,6 @@
 #include "Verification_chevalet.h"
 
+//On réalise la sélection des lettres à placer en général
 int placementAutreLettre( int i, int j, char plateau_de_jeu[MAX][MAX],
                            char chevalet_joueur[MAX_DECK], int taille_logique_chevalet, char* alphabet,int occurrence_point[][COLONNES]) {
     int k, valide = 0,score;
@@ -42,6 +43,7 @@ int placementAutreLettre( int i, int j, char plateau_de_jeu[MAX][MAX],
     return score;
 }
 
+// On regarde combien de lettre le joueur veut placer durant son tour
 void nombreDeLettres(unsigned int *pnombreLettres) {
     do {
         printf("Combien de lettres souhaitez-vous placer?\n");
@@ -55,6 +57,7 @@ void nombreDeLettres(unsigned int *pnombreLettres) {
     } while (*pnombreLettres < 2 || *pnombreLettres > 7);
 }
 
+//On demande au joueur le sens dans lequel il veut placer son mot sur le plateau de jeu
 char sensDuMot() {
     char sensMot = '0';
     do {
@@ -64,6 +67,7 @@ char sensDuMot() {
     return sensMot;
 }
 
+//on demande quelle sera la première lettre à être posée sur le plateau de jeu (sur le #)
 int placementPremiereLettrePremierMot(char plateau_de_jeu[MAX][MAX],
                                        char chevalet_joueur[MAX_DECK], int taille_logique_chevalet,
                                        char* alphabet, int occurrence_point[][COLONNES],int*i,int*j) {
@@ -85,6 +89,7 @@ int placementPremiereLettrePremierMot(char plateau_de_jeu[MAX][MAX],
                     valide = 1;
                     k = taille_logique_chevalet;
                 }
+                // on vérifie que si la lettre demandée n'est pas dans le chevalet, alors il peut y avoir un JOKER
                 if (chevalet_joueur[k] == (char) JOKER && plateau_de_jeu[*i][*j] == (char)35 ){
                     printf("La saisie ne correspond pas aux lettres sur votre chevalet.\n"
                            "Utilisation du joker.\n");
@@ -110,7 +115,7 @@ int placementPremiereLettrePremierMot(char plateau_de_jeu[MAX][MAX],
     } while (islower(lettreAPlacer) == 0 && isupper(lettreAPlacer == 0));
     return score;
 }
-
+//Ce code consiste à placer la première lettre du mot que chaque joueur placera durant la partie (à l'exception du premier joueur au tour 1 qui place directement sa première lettre sur le #)
 int placementPremiereLettre(char plateau_de_jeu[MAX][MAX],int taille_logique_chevalet,
                             char chevalet_joueur[MAX_DECK], char*alphabet, int occurrence_point[][COLONNES],int*o,int*p) {
     char lettreAPlacer = 0;
@@ -157,6 +162,7 @@ int placementPremiereLettre(char plateau_de_jeu[MAX][MAX],int taille_logique_che
     return score;
 }
 
+//On réalise le code pour placer un mot en vertical et ainsi éviter des redondances de lecture d'informations provenant du joueur
 int placementVertical( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],char* alphabet,int occurrence_point[][COLONNES], int j) {
     int i = 0,score;
     char e = 65, b = 90; //J'ai pas compter le jocker
@@ -173,7 +179,7 @@ int placementVertical( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_D
     return score;
 }
 
-
+//On réalise le code pour placer un mot en horizontal et ainsi éviter des redondances de lecture d'informations provenant du joueur
 int placementHorizontal( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],char* alphabet,int occurrence_point[][COLONNES], int i) {
     int j = 0,score;
     char e = 65, b = 90; //J'ai pas compter le jocker
@@ -189,6 +195,7 @@ int placementHorizontal( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX
     return score;
 }
 
+//On effectue la pose du premier mot sur le plateau du jeu de Scrabble et de la partie
 int placementPremierMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],
                          unsigned int *pnombreLettres, char* alphabet, int occurrence_point[][COLONNES]) { //pour le tout premier mot du jeu
     char sensMot = 0;
@@ -226,6 +233,7 @@ int placementPremierMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_
     return score;
 }
 
+//on effectue la pose du mot en général (sauf le premier mot du premier joueur au premier tour)
 int placementMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],unsigned int *pnombreLettres, char*alphabet, int occurrence_point[][COLONNES]) { //pous tous les autres mots du jeu
     char sensMot = '0';
     int score=0, i,j;

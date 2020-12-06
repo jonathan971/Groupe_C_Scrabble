@@ -1,4 +1,6 @@
 #include "Bienvenue.h"
+//On a ici toutes les règles du jeu
+//On peut y accéder étape par étape pour aller directement à la règle qui nous intéresse
 void regle_jeu(unsigned int *choix) {
     do {
         for (int i = 0; i < 19; ++i) {
@@ -222,7 +224,7 @@ void regle_jeu(unsigned int *choix) {
     }while(*choix>7);
 }
 
-
+//personnes ayant participées à la création de ce programme
 void credits(unsigned int *choix) {
     printf("Scrabble par des ING1 "
            "Jonathan VELIN & Paul NAVON & Kenza ERRAJI\n"
@@ -241,6 +243,8 @@ void credits(unsigned int *choix) {
         default: break;
     }
 }
+
+//Procédure permettant de quitter les règles et de revenir au chargement du jeu
 void retour(unsigned int *choix){
     do{
         do{
