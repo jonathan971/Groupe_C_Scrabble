@@ -25,10 +25,9 @@ Dans ce dossier vous trouverez les sous-fichiers suivants :
 * `Regle` : Répertorie toutes les règles du Scrabble et les crédits <br />
 * `joueur_initializer` : Initialise le joueur <br />
 * `TableauDeJeu` : Initalisation et création du plateau de jeu et du chevalet <br />
-* `Pioche` : Initalisation et création de la pioche du jeu <br />
 * `laPioche` : Initialisation de la pioche du jeu <br />
-* `Creation du mot` : Dépot du mot sur le plateau de jeu <br />
 * `Verification_chevalet` : Pose le mot sur le tableau, vérifie que ce mot existe, verifie que les lettres du mot sont dans le chevalet du joueur  <br />
+* `joueurScore ` : Permet de calculer les points accumuler pendant la partie <br />
 
 ## Amélioration
 Très bientôt vous pourrez jouer seul contre une IA...

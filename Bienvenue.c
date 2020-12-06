@@ -96,7 +96,7 @@ void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int
             do {
                 printf("Combien de lettre voulez vous échangez ?\n");
                 scanf("%d", &n_lettre);
-            }while (n_lettre<0 && n_lettre>7 );
+            }while (n_lettre<0 || n_lettre>7 );
             do {
                 echange_chevalet_pioche(Player, modiftaillephysique, lapioche, taille_logique_chevalet, chevalet_joueur, alphabet, pi, choixx,choix1,choix2);
                 n_lettre-=1;
