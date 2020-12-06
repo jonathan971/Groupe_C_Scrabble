@@ -31,4 +31,4 @@ Dans ce dossier vous trouverez les sous-fichiers suivants :
 
 ## Amélioration
 Très bientôt vous pourrez jouer seul contre une IA...<br />
-#####BON JEU !!
+##### BON JEU !!
