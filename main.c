@@ -47,9 +47,10 @@ int main() {
                     afficherMenuPendantPartie(&choix, &i, Player, &modiftaillephysique, lapioche, MAX_DECK,
                                               Player[i].chevalet_joueur, occurrence_point, alphabet);
                     while (choix == 7) {
-                        if (i == 0) {
+                        if (j == 0) {
                             Player[i].score+=placementPremierMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);
                         }
+                        j++;
                         if (i >= 1) {
                             Player[i].score+=placementMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);
                         }
