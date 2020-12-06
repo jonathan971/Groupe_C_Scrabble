@@ -58,7 +58,7 @@ int placementPremiereLettrePremierMot(char plateau_de_jeu[MAX][MAX],
                                        char chevalet_joueur[MAX_DECK], int taille_logique_chevalet,
                                        char* alphabet, int occurrence_point[][COLONNES],int*i,int*j) {
     char lettreAPlacer = 0;
-    int k = 0, f = 0, valide = 0,score;
+    int k, valide = 0,score;
     do {  //verification que le caractere est bien une lettre
         printf("Vous commencez la partie.\n");
         do {
@@ -78,7 +78,6 @@ int placementPremiereLettrePremierMot(char plateau_de_jeu[MAX][MAX],
                 if (lettreAPlacer != chevalet_joueur[k] && valide==0) {
                     valide = 0;
                     if (k == taille_logique_chevalet-1) {
-                        f=0;
                         printf("Le caractere saisi ne correspond pas aux lettres sur votre chevalet. Veuillez recommencer:\n");
                     }
                 }
