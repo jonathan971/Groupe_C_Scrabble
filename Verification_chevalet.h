@@ -7,6 +7,7 @@
 #define MAX 15
 
 void nombreDeLettres(unsigned int *pnombreLettres);
+void utilisationJoker(int i, int j, char lettreAPlacer, char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK]);
 char sensDuMot();
 int placementPremierMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],unsigned int *pnombreLettres, char alphabet[], int occurrence_point[][COLONNES]);
 int placementPremiereLettre(char plateau_de_jeu[MAX][MAX],int taille_logique_chevalet,char chevalet_joueur[MAX_DECK], char*alphabet, int occurrence_point[][COLONNES], int*i, int*j);
