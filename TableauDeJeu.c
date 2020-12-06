@@ -8,8 +8,31 @@ void affichage_tableau_2D(char tab[MAX][MAX], int taille_logique){// Affichage l
         printf("%2d ",i+1);
         printf("|");
         for(j=0;j<taille_logique;j++){
-            printf(" %4c", tab[i][j]);
-            printf("|");
+            if(tab[i][j]==(char)36){
+                printf(ANSI_COLOR_BLUE" %4c"ANSI_COLOR_RESET, tab[i][j]);
+                printf("|");
+            }
+            else if (tab[i][j]==(char)38) {
+                printf(ANSI_COLOR_MAGENTA" %4c"ANSI_COLOR_RESET, tab[i][j]);
+                printf("|");
+            }
+            else if(tab[i][j]==(char)37){
+                printf(ANSI_COLOR_GREEN" %4c"ANSI_COLOR_RESET, tab[i][j]);
+                printf("|");
+            }
+            else if (tab[i][j]==(char)64) {
+                printf(ANSI_COLOR_RED" %4c"ANSI_COLOR_RESET, tab[i][j]);
+                printf("|");
+            }
+            else if (tab[i][j]==(char)35) {
+                printf(ANSI_COLOR_YELLOW" %4c"ANSI_COLOR_RESET, tab[i][j]);
+                printf("|");
+            }
+            else {
+                printf(" %4c", tab[i][j]);
+                printf("|");
+            }
+
         }
 
         printf("\n");
