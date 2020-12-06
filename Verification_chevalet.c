@@ -2,17 +2,13 @@
 
 int placementAutreLettre( int i, int j, char plateau_de_jeu[MAX][MAX],
                            char chevalet_joueur[MAX_DECK], int taille_logique_chevalet, char* alphabet,int occurrence_point[][COLONNES]) {
-    int k, f = 0, valide = 0,score;
+    int k, valide = 0,score;
     char lettreAPlacer = 0;
     do {
         do { //verification que le caractere est bien une lettre
             printf("Saisissez la lettre que vous souhaitez placer:\n");
             scanf(" %c", &lettreAPlacer);
             for (k = 0; k < taille_logique_chevalet; k++) {
-                /*while (f <= 100) {
-                    printf("Recherche du mot : %d %c \n", f, 37);
-                    f += 20;
-                }*/
                 if (lettreAPlacer == chevalet_joueur[k]) {//verification que la lettre est presente sur le chevalet
                     printf("Le caractere saisi a été trouvé !!\n");
                     score=bonusPlateau(7,7, plateau_de_jeu, lettreAPlacer, alphabet, occurrence_point);
@@ -24,7 +20,6 @@ int placementAutreLettre( int i, int j, char plateau_de_jeu[MAX][MAX],
                 if ( lettreAPlacer != chevalet_joueur[k] && valide==0) {
                     valide = 0;
                     if (k == taille_logique_chevalet-1 ) {
-                        f=0;
                         printf("Le caractere saisi ne correspond pas aux lettres sur votre chevalet. Veuillez recommencer:\n");
                     }
                 }
@@ -109,7 +104,7 @@ int placementPremiereLettre(char plateau_de_jeu[MAX][MAX],int taille_logique_che
                 scanf(" %d", &i);
                 i--;
                 *o=i;
-                printf("Saisissez le numero de colonne\n");
+                printf("Saisissez le numero de colonne (A=0 B=1...)\n");
                 scanf("%d",&j);
                 *p=j;
                 if(plateau_de_jeu[i][j] < e && plateau_de_jeu[i][j] > b){
@@ -147,12 +142,9 @@ int placementVertical( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_D
     int i = 0,score;
     char e = 65, b = 90; //J'ai pas compter le jocker
     printf("\nProchaine lettre\n");
-    /*printf("\nProchaine lettre\n"
-           "Saisissez le numero de la colonne (A=0 B=1...)\n");
-    scanf("%d", &j);*/
     do {
         printf("Saisissez le numero de la ligne\n");
-        scanf("%d", &i); //[i] pour que le mot soit ecrit vers le bas comme [j] ne change pas
+        scanf(" %d", &i); //[i] pour que le mot soit ecrit vers le bas comme [j] ne change pas
         i -= 1;
         if (plateau_de_jeu[i][j] <= e && plateau_de_jeu[i][j] >= b) {
             printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
@@ -167,12 +159,9 @@ int placementHorizontal( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX
     int j = 0,score;
     char e = 65, b = 90; //J'ai pas compter le jocker
     printf("\nProchaine lettre\n");
-    /*printf("\nProchaine lettre\n"
-           "Saisissez le numero de ligne \n");
-    scanf("%d", &i);*/
     do {
         printf("Saisissez le numero de colonne (A=0 B=1...)\n");
-        scanf("%d", &j);
+        scanf(" %d", &j);
         if (plateau_de_jeu[i][j] <= e && plateau_de_jeu[i][j] >= b) {
             printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
         }
