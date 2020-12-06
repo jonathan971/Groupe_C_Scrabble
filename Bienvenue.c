@@ -63,7 +63,7 @@ void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int
                         }}while (*choix>2);
                     break;
                 case 3:
-                    sauvegarde(Player, plateau_de_jeu, lapioche);
+                    sauvegarder(Player, plateau_de_jeu, lapioche);
                     //Si la sauvegarde a été effectué correctement affiche ça :
                     //printf("Sauvegarde réalisé avec SUCCES");
                     break;
