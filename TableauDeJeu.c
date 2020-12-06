@@ -8,7 +8,7 @@ void affichage_tableau_2D(char tab[MAX][MAX], int taille_logique){// Affichage l
         printf("%2d ",i+1);
         printf("|");
         for(j=0;j<taille_logique;j++){
-            printf(" %4c", tab[i][j]);
+            printf(ANSI_COLOR_RED" %4c"ANSI_COLOR_RESET, tab[i][j]);
             printf("|");
         }
 
