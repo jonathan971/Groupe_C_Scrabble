@@ -31,9 +31,15 @@ int main() {
     switch (choix) {
         case 1:
             choix = 0;
+            for ( i = 0; i < 20; ++i) {
+                printf("_");
+            }
             printf("\n");
             printf("                   1. COMMENCER UNE NOUVELLE PARTIE \n");
             printf("                   2. ACCEDER A UNE SAUVEGARDE \n");
+            for ( i = 0; i < 20; ++i) {
+                printf("_");
+            }
             scanf("%d", &choix);
             switch (choix) {
                 case 1:
