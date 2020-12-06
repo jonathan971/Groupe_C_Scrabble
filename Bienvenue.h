@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "TableauDeJeu.h"
 #include "Regle.h"
-#include "sauvegarde.h"
+#include "joueur_initializer.h"
 
 #ifndef GROUPE_C_SCRABBLE_BIENVENUE_H
 #define GROUPE_C_SCRABBLE_BIENVENUE_H

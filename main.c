@@ -10,7 +10,7 @@ int main() {
     int modiftaillephysique=0,occurrence_point[LIGNES][COLONNES];
     char alphabet[LIGNES+1], lapioche[JETONS];
 
-    leSac(alphabet,lapioche,occurrence_point);
+    leSac(alphabet,lapioche,occurrence_point); //fichier : laPioche
     Joueur Player[4]={0};
     char plateau_de_jeu[MAX][MAX]={{36,32,32,38,32,32,32,36,32,32,32,38,32,32,36},
                                    {32,64,32,32,32,37,32,32,32,37,32,32,32,64,32},
@@ -27,35 +27,35 @@ int main() {
                                    {32,32,64,32,32,32,38,32,38,32,32,32,64,32,32},
                                    {32,64,32,32,32,37,32,32,32,37,32,32,32,64,32},
                                    {36,32,32,38,32,32,32,36,32,32,32,38,32,32,36}};
-    bienvenue_jeu(&choix);
+    bienvenue_jeu(&choix);//fichier : Bienvenue
     switch (choix) {
         case 1:
-            intialisation_joueur(Player, &modiftaillephysique, lapioche,&nb_player);
+            intialisation_joueur(Player, &modiftaillephysique, lapioche,&nb_player);//fichier :joueur_initializer
             printf("\t\t\t\t\t\t\t\t\t    DEBUT DE LA PARTIE\n");
             do {
-                affichage_tableau_2D(plateau_de_jeu, MAX);
+                affichage_tableau_2D(plateau_de_jeu, MAX);//fichier : TableauDeJeu
                 printf("\n");
                 for(i=0; i<nb_player;i++) {
                     if (i >= 1) {
-                        affichage_tableau_2D(plateau_de_jeu, MAX);
+                        affichage_tableau_2D(plateau_de_jeu, MAX);//fichier : TableauDeJeu
                         printf("\n");
                     }
                     printf("%s, a vous :\n", Player[i].nom);
-                    affichagechevalet(Player[i].chevalet_joueur, MAX_DECK, occurrence_point, alphabet);
+                    affichagechevalet(Player[i].chevalet_joueur, MAX_DECK, occurrence_point, alphabet);//fichier : TableauDeJeu
                     printf("\n");
                     choix=0;
                     afficherMenuPendantPartie(&choix, &i, Player, &modiftaillephysique, lapioche, MAX_DECK,
-                                              Player[i].chevalet_joueur, occurrence_point, alphabet,plateau_de_jeu, &nb_player, &i);
+                                              Player[i].chevalet_joueur, occurrence_point, alphabet,plateau_de_jeu, &nb_player, &i);//fichier : Bienvenue
                     while (choix == 7) {
                         if (j == 0) {
-                            Player[i].score+=placementPremierMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);
+                            Player[i].score+=placementPremierMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);//fichier :Verification_chevalet
                         }
                         if (j == 1) {
-                            Player[i].score+=placementMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);
+                            Player[i].score+=placementMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);//fichier : Verification_chevalet
                         }
                         j=1;
                         printf("Score : %d\n\n",Player[i].score);
-                        recharge_chevalet(Player, &modiftaillephysique, lapioche,&i);
+                        recharge_chevalet(Player, &modiftaillephysique, lapioche,&i);//fichier : joueur_initializer
                         choix=0;
                     }
                 }
@@ -76,31 +76,3 @@ int main() {
     }
     return 0;
 }
-
-// le timer : on doit prendre la boucle du timer et la mettre dans la fonction saisir le mot pour que ca fonctionne
-/*#include <time.h>
-#include <stdio.h>
-#define TIMER 2 // en minute
-
-void timer(clock_t duree){
-    clock_t time_out = clock();
-    while((time_out + duree) > clock());
-}
-
-
-int main(){
-    int i;
-    for(i = 0; i <TIMER*60; i++){
-        timer(1000);
-        if(i==((TIMER*60)/2)-1){
-            printf("Il vous reste %d secondes.\n",(TIMER*60)-(i+1));
-        }
-        if(i==((TIMER*60)*0.75)-1){
-            printf("Il vous reste %d secondes.\n",(TIMER*60)-(i+1));
-        }
-        if(i==((TIMER*60)*11/12)-1){
-            printf("Il vous reste %d secondes.\n",(TIMER*60)-(i+1));
-        }
-    }
-    return 0;
-}*/
