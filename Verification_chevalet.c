@@ -85,7 +85,7 @@ int placementPremiereLettrePremierMot(char plateau_de_jeu[MAX][MAX],
                     valide = 1;
                     k = taille_logique_chevalet;
                 }
-                if (chevalet_joueur[k] == (char) JOKER && plateau_de_jeu[*i][*j] == (char)32 ){
+                if (chevalet_joueur[k] == (char) JOKER && plateau_de_jeu[*i][*j] == (char)35 ){
                     printf("La saisie ne correspond pas aux lettres sur votre chevalet.\n"
                            "Utilisation du joker.\n");
                     printf("Saisissez la lettre que vous souhaitez placer:\n");
