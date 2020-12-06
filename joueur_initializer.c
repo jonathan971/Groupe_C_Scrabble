@@ -21,8 +21,8 @@ void intialisation_joueur(Joueur Player[], int *modiftaillephysique, char lapioc
     }
 }
 
-void recharge_chevalet(Joueur Player[], int *modiftaillephysique, char lapioche[JETONS],int *pi) {
-    int k = 0;
+void recharge_chevalet(Joueur Player[], int *modiftaillephysique, char lapioche[JETONS],const int *pi) {
+    int k;
     for (k = 0; k < JETONS; k++) {
         for (int j = 0; j < MAX_DECK - 1; j++) {
             while ((Player[*pi].chevalet_joueur[j] == '0' ||
@@ -40,7 +40,7 @@ void recharge_chevalet(Joueur Player[], int *modiftaillephysique, char lapioche[
 }
 
 void echange_chevalet_pioche(Joueur Player[], int *modiftaillephysique, char lapioche[], int taille_logique_chevalet,
-                             char chevalet_joueur[MAX_DECK], const char *alphabet, int *pi,char pchoixx[MAX_CHOIX],char pchoix1[MAX_CHOIX] , char pchoix2[MAX_CHOIX]) {
+                             const char chevalet_joueur[MAX_DECK], const char *alphabet, int *pi,char pchoixx[MAX_CHOIX],char pchoix1[MAX_CHOIX] , char pchoix2[MAX_CHOIX]) {
     char lettre1 = 0, lettre2 = 0;
     int k = 0, f = 0, valide = 0;
     char chaine_changement[2] = "0";

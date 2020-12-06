@@ -1,6 +1,6 @@
 #include "sauvegarde.h"
 
-void sauvegarder(Joueur* Player, char plateau_de_jeu[][MAX], char* lapioche,const int* nb_player,int*i, const int* modiftaillephysique){
+void sauvegarder(Joueur Player[], char plateau_de_jeu[][MAX], char* lapioche,const int* nb_player,int*i, const int* modiftaillephysique){
     FILE* sauvegardeTXT= fopen("..\\sauvegardeTXT.txt","w");
     FILE* sauvegardeChiffre= fopen("..\\sauvegardeChiffre.dat","w");
     fputs((char *) plateau_de_jeu,sauvegardeTXT);
@@ -19,7 +19,7 @@ void sauvegarder(Joueur* Player, char plateau_de_jeu[][MAX], char* lapioche,cons
     printf("Sauvegarde réalisé avec succès!\n");
 }
 
-void retourSauvegarde(Joueur* Player, char plateau_de_jeu[][MAX], char* lapioche,const int* nb_player,int*i, const int* modiftaillephysique){
+void retourSauvegarde(Joueur Player[], char plateau_de_jeu[][MAX], char* lapioche,const int* nb_player,int*i, const int* modiftaillephysique){
     FILE* sauvegardeTXT= fopen("..\\sauvegardeTXT.txt","r");
     FILE* sauvegardeChiffre= fopen("..\\sauvegardeChiffre.dat","r");
     fread((void *) *modiftaillephysique, sizeof(int), 1, sauvegardeChiffre);

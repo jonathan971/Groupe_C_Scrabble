@@ -2,57 +2,40 @@
 #include "Bienvenue.h"
 #include "laPioche.h"
 #include "Verification_chevalet.h"
-#include "sauvegarde.h"
 
 int main() {
-    unsigned int choix, jeu = 1,nbr_lettre = 0;
-    int i = 0, j = 0, sauvegarde,nb_player = 0;
+    unsigned int choix,jeu=1,nbr_lettre=0;
+    int i=0,j=0,nb_player=0;
     srand(time(NULL));
-    int modiftaillephysique = 0, occurrence_point[LIGNES][COLONNES];
-    char alphabet[LIGNES + 1], lapioche[JETONS];
+    int modiftaillephysique=0,occurrence_point[LIGNES][COLONNES];
+    char alphabet[LIGNES+1], lapioche[JETONS];
 
-    leSac(alphabet, lapioche, occurrence_point);
-    Joueur Player[4] = {0};
-    char plateau_de_jeu[MAX][MAX] = {{36, 32, 32, 38, 32, 32, 32, 36, 32, 32, 32, 38, 32, 32, 36},
-                                     {32, 64, 32, 32, 32, 37, 32, 32, 32, 37, 32, 32, 32, 64, 32},
-                                     {32, 32, 64, 32, 32, 32, 38, 32, 38, 32, 32, 32, 64, 32, 32},
-                                     {38, 32, 32, 64, 32, 32, 32, 38, 32, 32, 32, 64, 32, 32, 38},
-                                     {32, 32, 32, 32, 64, 32, 32, 32, 32, 32, 64, 32, 32, 32, 32},
-                                     {32, 37, 32, 32, 32, 37, 32, 32, 32, 37, 32, 32, 32, 37, 32},
-                                     {32, 32, 38, 32, 32, 32, 38, 32, 38, 32, 32, 32, 38, 32, 32},
-                                     {36, 32, 32, 38, 32, 32, 32, 35, 32, 32, 32, 32, 32, 32, 36},
-                                     {32, 32, 38, 32, 32, 32, 38, 32, 38, 32, 32, 32, 38, 32, 32},
-                                     {32, 37, 32, 32, 32, 37, 32, 32, 32, 37, 32, 32, 32, 37, 32},
-                                     {32, 32, 32, 32, 64, 32, 32, 32, 32, 32, 64, 32, 32, 32, 32},
-                                     {38, 32, 32, 64, 32, 32, 32, 38, 32, 32, 32, 64, 32, 32, 38},
-                                     {32, 32, 64, 32, 32, 32, 38, 32, 38, 32, 32, 32, 64, 32, 32},
-                                     {32, 64, 32, 32, 32, 37, 32, 32, 32, 37, 32, 32, 32, 64, 32},
-                                     {36, 32, 32, 38, 32, 32, 32, 36, 32, 32, 32, 38, 32, 32, 36}};
+    leSac(alphabet,lapioche,occurrence_point);
+    Joueur Player[4]={0};
+    char plateau_de_jeu[MAX][MAX]={{36,32,32,38,32,32,32,36,32,32,32,38,32,32,36},
+                                   {32,64,32,32,32,37,32,32,32,37,32,32,32,64,32},
+                                   {32,32,64,32,32,32,38,32,38,32,32,32,64,32,32},
+                                   {38,32,32,64,32,32,32,38,32,32,32,64,32,32,38},
+                                   {32,32,32,32,64,32,32,32,32,32,64,32,32,32,32},
+                                   {32,37,32,32,32,37,32,32,32,37,32,32,32,37,32},
+                                   {32,32,38,32,32,32,38,32,38,32,32,32,38,32,32},
+                                   {36,32,32,38,32,32,32,35,32,32,32,32,32,32,36},
+                                   {32,32,38,32,32,32,38,32,38,32,32,32,38,32,32},
+                                   {32,37,32,32,32,37,32,32,32,37,32,32,32,37,32},
+                                   {32,32,32,32,64,32,32,32,32,32,64,32,32,32,32},
+                                   {38,32,32,64,32,32,32,38,32,32,32,64,32,32,38},
+                                   {32,32,64,32,32,32,38,32,38,32,32,32,64,32,32},
+                                   {32,64,32,32,32,37,32,32,32,37,32,32,32,64,32},
+                                   {36,32,32,38,32,32,32,36,32,32,32,38,32,32,36}};
     bienvenue_jeu(&choix);
     switch (choix) {
         case 1:
-            choix = 0;
-            for (i = 0; i < 20; ++i) {
-                printf("_");
-            }
-            printf("\n");
-            printf("                   1. COMMENCER UNE NOUVELLE PARTIE \n");
-            printf("                   2. ACCEDER A UNE SAUVEGARDE \n");
-            for (i = 0; i < 20; ++i) {
-                printf("_");
-            }
-            scanf("%d", &sauvegarde);
-            if (sauvegarde == 1) {
-                intialisation_joueur(Player, &modiftaillephysique, lapioche, &nb_player);
-            }
+            intialisation_joueur(Player, &modiftaillephysique, lapioche,&nb_player);
             printf("\t\t\t\t\t\t\t\t\t    DEBUT DE LA PARTIE\n");
             do {
                 affichage_tableau_2D(plateau_de_jeu, MAX);
                 printf("\n");
-                for (i = 0; i < nb_player; i++) {
-                    if (sauvegarde == 2) {
-                        retourSauvegarde(Player,plateau_de_jeu,lapioche,&nb_player,&i,&modiftaillephysique);
-                    }
+                for(i=0; i<nb_player;i++) {
                     if (i >= 1) {
                         affichage_tableau_2D(plateau_de_jeu, MAX);
                         printf("\n");
@@ -60,54 +43,38 @@ int main() {
                     printf("%s, a vous :\n", Player[i].nom);
                     affichagechevalet(Player[i].chevalet_joueur, MAX_DECK, occurrence_point, alphabet);
                     printf("\n");
-                    choix = 0;
+                    choix=0;
                     afficherMenuPendantPartie(&choix, &i, Player, &modiftaillephysique, lapioche, MAX_DECK,
-                                              Player[i].chevalet_joueur, occurrence_point, alphabet, plateau_de_jeu, &nb_player, &i);
+                                              Player[i].chevalet_joueur, occurrence_point, alphabet,plateau_de_jeu, &nb_player, &i);
                     while (choix == 7) {
                         if (j == 0) {
-                            Player[i].score += placementPremierMot(plateau_de_jeu, Player[i].chevalet_joueur,
-                                                                   &nbr_lettre, alphabet, occurrence_point);
+                            Player[i].score+=placementPremierMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);
                         }
                         if (j == 1) {
-                            Player[i].score += placementMot(plateau_de_jeu, Player[i].chevalet_joueur,
-                                                            &nbr_lettre, alphabet, occurrence_point);
+                            Player[i].score+=placementMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);
                         }
-                        j = 1;
-                        printf("Score : %d\n\n", Player[i].score);
-                        recharge_chevalet(Player, &modiftaillephysique, lapioche, &i);
-                        choix = 0;
-                    }
-                    for (j = 0; j < JETONS; j++) {
-                        if (lapioche[j] == 0 || plateau_de_jeu[i][j] != 0) {
-                            for (int k = 0; k < MAX_DECK; k++) {
-                                if (Player[i].chevalet_joueur[k] == 0) {
-                                    printf("Fin de la partie\n");
-                                    for (int g = 0; g < nb_player; g++) {
-                                        if (Player[g].score > Player[g + 1].score) {
-                                            printf("%s TU REMPORTES LA PARTIE AVEC %d points\n", Player[g].nom,
-                                                   Player[g].score);
-                                        } else {
-                                            printf("%s TU REMPORTES LA PARTIE AVEC %d points\n",
-                                                   Player[g + 1].nom, Player[g + 1].score);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        jeu=0;
+                        j=1;
+                        printf("Score : %d\n\n",Player[i].score);
+                        recharge_chevalet(Player, &modiftaillephysique, lapioche,&i);
+                        choix=0;
                     }
                 }
-            } while (jeu != 0);
+
+                printf("Fin jeu : tapper 1\n"
+                       "Continuer jeu : tapper 0\n"),
+                        scanf("%d", &jeu);
+
+                //faudra juste réafficher la pause et mettre continuer
+            }while (jeu!=1);//jeu fini (il faudra changer la valeur à 0 quand on aura tout fini)
             break;
         case 2:
-            choix = 0;
+            choix=0;
             regle_jeu(&choix);
             break;
         case 3:
             credits(&choix);
         case 4:
-        default:
-            break;
+        default:break;
     }
     return 0;
 }

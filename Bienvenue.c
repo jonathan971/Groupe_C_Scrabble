@@ -65,7 +65,7 @@ void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int
                         }}while (*choix>2);
                     break;
                 case 3:
-                    sauvegarder(Player, plateau_de_jeu, lapioche, nb_player, i, (const int *) &modiftaillephysique);
+                    //sauvegarder(Player, plateau_de_jeu, lapioche, nb_player, i, (const int *) &modiftaillephysique);
                     break;
                 default:break;
             }
