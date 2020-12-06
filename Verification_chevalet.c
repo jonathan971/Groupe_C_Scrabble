@@ -11,20 +11,21 @@ int placementAutreLettre( int i, int j, char plateau_de_jeu[MAX][MAX],
             for (k = 0; k < taille_logique_chevalet; k++) {
                 if (lettreAPlacer == chevalet_joueur[k]) {//verification que la lettre est presente sur le chevalet
                     printf("Le caractere saisi a été trouvé !!\n");
-                    score=bonusPlateau(7,7, plateau_de_jeu, lettreAPlacer, alphabet, occurrence_point);
+                    score=bonusPlateau(i,j, plateau_de_jeu, lettreAPlacer, alphabet, occurrence_point);
                     plateau_de_jeu[i][j] = lettreAPlacer;//remplacement de la case du tableau par la lettre saisie
                     chevalet_joueur[k] = '0';//suppression de la lettre utilisee pour ne pas pouvoir la remettre une autre fois/ remplacement par 0
                     valide = 1;
                     k = taille_logique_chevalet;
                 }
-                if (chevalet_joueur[k] == (char) JOKER && plateau_de_jeu[i][j] == ' ') {
+                if (chevalet_joueur[k] == (char) JOKER && plateau_de_jeu[i][j] == (char)32 ){
                     printf("La saisie ne correspond pas aux lettres sur votre chevalet.\n"
                            "Utilisation du joker.\n");
                     printf("Saisissez la lettre que vous souhaitez placer:\n");
                     scanf(" %c", &lettreAPlacer);
                     plateau_de_jeu[i][j] = lettreAPlacer;
-                    score+=0;
+                    score=0;
                     chevalet_joueur[k] = '0';
+                    valide=1;
                 }
                 if ( lettreAPlacer != chevalet_joueur[k] && valide==0) {
                     valide = 0;
@@ -83,6 +84,16 @@ int placementPremiereLettrePremierMot(char plateau_de_jeu[MAX][MAX],
                     chevalet_joueur[k] = 0;//suppression de la lettre utilisee pour ne pas pouvoir la remettre une autre fois
                     valide = 1;
                     k = taille_logique_chevalet;
+                }
+                if (chevalet_joueur[k] == (char) JOKER && plateau_de_jeu[*i][*j] == (char)32 ){
+                    printf("La saisie ne correspond pas aux lettres sur votre chevalet.\n"
+                           "Utilisation du joker.\n");
+                    printf("Saisissez la lettre que vous souhaitez placer:\n");
+                    scanf(" %c", &lettreAPlacer);
+                    plateau_de_jeu[*i][*j] = lettreAPlacer;
+                    score=0;
+                    chevalet_joueur[k] = '0';
+                    valide=1;
                 }
                 if (lettreAPlacer != chevalet_joueur[k] && valide==0) {
                     valide = 0;
