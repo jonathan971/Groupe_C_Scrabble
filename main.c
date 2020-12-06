@@ -19,7 +19,7 @@ int main() {
                                    {32,32,32,32,64,32,32,32,32,32,64,32,32,32,32},
                                    {32,37,32,32,32,37,32,32,32,37,32,32,32,37,32},
                                    {32,32,38,32,32,32,38,32,38,32,32,32,38,32,32},
-                                   {36,32,32,38,32,32,32,32,32,32,32,32,32,32,36},
+                                   {36,32,32,38,32,32,32,35,32,32,32,32,32,32,36},
                                    {32,32,38,32,32,32,38,32,38,32,32,32,38,32,32},
                                    {32,37,32,32,32,37,32,32,32,37,32,32,32,37,32},
                                    {32,32,32,32,64,32,32,32,32,32,64,32,32,32,32},
@@ -50,11 +50,10 @@ int main() {
                         if (j == 0) {
                             Player[i].score+=placementPremierMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);
                         }
-                        j++;
-
-                        if (i >= 1) {
+                        if (j == 1) {
                             Player[i].score+=placementMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);
                         }
+                        j=1;
                         printf("Score : %d\n\n",Player[i].score);
                         recharge_chevalet(Player, &modiftaillephysique, lapioche,&i);
                         choix=0;
