@@ -19,8 +19,10 @@ void bienvenue_jeu(unsigned int *choix){//Affichage du Menu avec le style d'affi
     scanf("%d",choix);
 }
 
-void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int *modiftaillephysique, char lapioche[],int taille_logique_chevalet,char chevalet_joueur[MAX_DECK],
-                               int occurence_point[LIGNES][COLONNES], const char* alphabet){
+void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int *modiftaillephysique,
+                               char lapioche[],int taille_logique_chevalet,char chevalet_joueur[MAX_DECK],
+                               int occurence_point[LIGNES][COLONNES], const char* alphabet,
+                               char plateau_de_jeu[][MAX],int* nb_player, int* i){
     int n_lettre=0;
     char choixx[MAX_CHOIX] = "0",choix1[MAX_CHOIX] = "oui", choix2[MAX_CHOIX] = "non";
     *choix=0;
@@ -63,9 +65,7 @@ void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int
                         }}while (*choix>2);
                     break;
                 case 3:
-                    sauvegarder(Player, plateau_de_jeu, lapioche);
-                    //Si la sauvegarde a été effectué correctement affiche ça :
-                    //printf("Sauvegarde réalisé avec SUCCES");
+                    sauvegarder(Player, plateau_de_jeu, lapioche, nb_player, i, (const int *) &modiftaillephysique);
                     break;
                 default:break;
             }
@@ -103,12 +103,11 @@ void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int
                 n_lettre-=1;
             }while (n_lettre!=0);
             afficherMenuPendantPartie(choix,pi,Player, modiftaillephysique, lapioche,MAX_DECK, chevalet_joueur,
-                                      occurence_point, alphabet);
+                                      occurence_point, alphabet,plateau_de_jeu,nb_player,i);
             break;
         case 0:
             break;
         default:break;
-            *choix=0;
     }
 }
 

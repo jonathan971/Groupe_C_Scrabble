@@ -2,10 +2,11 @@
 #include "Bienvenue.h"
 #include "laPioche.h"
 #include "Verification_chevalet.h"
+#include "sauvegarde.h"
 
 int main() {
-    unsigned int choix, jeu = 1, nbr_lettre = 0, nb_player = 0;
-    int i = 0, j = 0, sauvegarde;
+    unsigned int choix, jeu = 1, nb_player = 0;
+    int i = 0, j = 0, sauvegarde,nbr_lettre = 0;
     srand(time(NULL));
     int modiftaillephysique = 0, occurrence_point[LIGNES][COLONNES];
     char alphabet[LIGNES + 1], lapioche[JETONS];
@@ -50,7 +51,7 @@ int main() {
                 printf("\n");
                 for (i = 0; i < nb_player; i++) {
                     if (sauvegarde == 2) {
-                        retourSauvegarde(Player, plateau_de_jeu, lapioche, &i);
+                        retourSauvegarde(Player,plateau_de_jeu,lapioche,&nb_player,&i,&modiftaillephysique);
                     }
                     if (i >= 1) {
                         affichage_tableau_2D(plateau_de_jeu, MAX);
@@ -93,7 +94,7 @@ int main() {
                                 }
                             }
                         }
-                        jeu=1;
+                        jeu=0;
                     }
                 }
 
