@@ -30,5 +30,5 @@ Dans ce dossier vous trouverez les sous-fichiers suivants :
 * `joueurScore ` : Permet de calculer les points accumuler pendant la partie <br />
 
 ## Amélioration
-Très bientôt vous pourrez jouer seul contre une IA...
+Très bientôt vous pourrez jouer seul contre une IA...<br />
 #####BON JEU !!
