@@ -28,7 +28,7 @@ void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int
         printf("1-Pause\n"
                "2-Continuer la partie\n"
                "3-Changer ses lettres\n"
-               "0-Quitter\n"
+               "0-Quitter le jeu\n"
                "Saisir votre choix\n");
         scanf("%d", choix);
     }while (*choix>3);
@@ -39,12 +39,14 @@ void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int
             do{
                 printf("1-Reprendre la partie\n"
                        "2-Afficher les regles\n"
+                       "3-Sauvegarder et Quitter la partie\n"
                        "0-Quitter la partie\n");
                 scanf("%d", choix);}while (*choix>2);
             printf("\n");
             switch (*choix) {
                 case 1:
                         *choix = 7;
+                    break;
                 case 2:
                     regle_jeu(choix);
                     do{
@@ -59,6 +61,12 @@ void afficherMenuPendantPartie(unsigned int *choix,int *pi, Joueur Player[], int
                         else if (*choix==2){
                                 *choix = 7;
                         }}while (*choix>2);
+                    break;
+                case 3:
+                    sauvegarde(Player, plateau_de_jeu, lapioche);
+                    //Si la sauvegarde a été effectué correctement affiche ça :
+                    //printf("Sauvegarde reéalisé avec SUCCES");
+                    break;
                 default:break;
             }
             break;
