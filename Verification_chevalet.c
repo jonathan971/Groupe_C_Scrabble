@@ -168,12 +168,12 @@ int placementHorizontal( char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX
     int i = 0, j = 0,score;
     char e = 65, b = 90; //J'ai pas compter le jocker
     printf("\nProchaine lettre\n"
-           "Saisissez le numero de la colonne (A=0 B=1...)\n");
+           "Saisissez le numero de ligne \n");
     scanf("%d", &i);
+    i--;
     do {
-        printf("Saisissez le numero de la case suivante (l'abscisse)\n");
-        scanf("%d", &j); //[j] pour que le mot soit ecrit vers le bas comme [i] ne change pas
-        j -= 1;
+        printf("Saisissez le numero de colonne (A=0 B=1...)\n");
+        scanf("%d", &j);
         if (plateau_de_jeu[i][j] <= e && plateau_de_jeu[i][j] >= b) {
             printf("La case que vous avez saisie est deja prise. Veuillez recommencer.\n");
         }
@@ -227,8 +227,8 @@ int placementMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],u
 
     switch (sensMot) {  //placement du mot sur le plateau de jeu
         case 'v':
-            score+=placementPremiereLettre(plateau_de_jeu,MAX_DECK,chevalet_joueur, alphabet, occurrence_point);
-            *pnombreLettres-=1;
+            /*score+=placementPremiereLettre(plateau_de_jeu,MAX_DECK,chevalet_joueur, alphabet, occurrence_point);
+            *pnombreLettres-=1;*/
             do {
                 score+=placementVertical(plateau_de_jeu, chevalet_joueur,alphabet,occurrence_point);
                 *pnombreLettres-=1;
@@ -238,8 +238,8 @@ int placementMot(char plateau_de_jeu[MAX][MAX], char chevalet_joueur[MAX_DECK],u
             } while (*pnombreLettres != 0);
             break;
         case 'h':
-            score+=placementPremiereLettre(plateau_de_jeu,MAX_DECK,chevalet_joueur, alphabet, occurrence_point);
-            *pnombreLettres-=1;
+            /*score+=placementPremiereLettre(plateau_de_jeu,MAX_DECK,chevalet_joueur, alphabet, occurrence_point);
+            *pnombreLettres-=1;*/
             do {
                 score+=placementHorizontal( plateau_de_jeu, chevalet_joueur,alphabet,occurrence_point);
                 *pnombreLettres-=1;

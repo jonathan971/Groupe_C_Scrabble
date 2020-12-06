@@ -19,7 +19,7 @@ int main() {
                                    {32,32,32,32,64,32,32,32,32,32,64,32,32,32,32},
                                    {32,37,32,32,32,37,32,32,32,37,32,32,32,37,32},
                                    {32,32,38,32,32,32,38,32,38,32,32,32,38,32,32},
-                                   {36,32,32,38,32,'P','L','A','N','E','T',32,32,32,36},
+                                   {36,32,32,38,32,32,32,32,32,32,32,32,32,32,36},
                                    {32,32,38,32,32,32,38,32,38,32,32,32,38,32,32},
                                    {32,37,32,32,32,37,32,32,32,37,32,32,32,37,32},
                                    {32,32,32,32,64,32,32,32,32,32,64,32,32,32,32},
@@ -54,7 +54,7 @@ int main() {
                         if (i >= 1) {
                             Player[i].score+=placementMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);
                         }
-                        printf("Score : %d\n",Player[i].score);
+                        printf("Score : %d\n\n",Player[i].score);
                         recharge_chevalet(Player, &modiftaillephysique, lapioche,&i);
                         choix=0;
                     }
