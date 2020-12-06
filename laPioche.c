@@ -188,8 +188,8 @@ void melangeDuSac(char lapioche[]){
     int i,lettreadeplace, interverser;
     char securite1, securite2;
     for(i=0;i<FIN_PIOCHE;i++){
-        lettreadeplace=rand()%(DEBUT_PIOCHE-FIN_PIOCHE+1)+DEBUT_PIOCHE;
-        interverser=rand()%(DEBUT_PIOCHE-FIN_PIOCHE+1)+DEBUT_PIOCHE;
+        lettreadeplace=rand()%(FIN_PIOCHE-DEBUT_PIOCHE+1)+DEBUT_PIOCHE;
+        interverser=rand()%(FIN_PIOCHE-DEBUT_PIOCHE+1)+DEBUT_PIOCHE;
         securite1=lapioche[lettreadeplace];
         securite2=lapioche[interverser];
         lapioche[interverser]=securite1;

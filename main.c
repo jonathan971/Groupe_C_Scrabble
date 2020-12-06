@@ -84,6 +84,7 @@ int main() {
     return 0;
 }
 
+
 // le timer : on doit prendre la boucle du timer et la mettre dans la fonction saisir le mot pour que ca fonctionne
 /*#include <time.h>
 #include <stdio.h>
