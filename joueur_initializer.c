@@ -23,16 +23,16 @@ void intialisation_joueur(Joueur Player[], int *modiftaillephysique, char lapioc
 
 //Lorsque le joueur aposé ses lettres, il doit re-remplir son chevalet et donc combler les lettres utilisés remplacer par "0" par de nouvelles lettres
 void recharge_chevalet(Joueur Player[], int *modiftaillephysique, char lapioche[JETONS],const int *pi) {
-    int k;
+    int k = 0;
     for (k = 0; k < JETONS; k++) {
         for (int j = 0; j < MAX_DECK - 1; j++) {
             while ((Player[*pi].chevalet_joueur[j] == '0' ||
                     Player[*pi].chevalet_joueur[j] == 0) ||
-                   (lapioche[k] > (char) 65 && lapioche[k] < (char) 90 && lapioche[k] != (char) JOKER)) {
+                   (lapioche[k] < (char) 65 && lapioche[k] > (char) 90 && lapioche[k] != (char) JOKER)) {
                 if (Player[*pi].chevalet_joueur[j] == '0' || Player[*pi].chevalet_joueur[j] == 0) {
                     Player[*pi].chevalet_joueur[j] = pickJetons(lapioche, modiftaillephysique);
                 }
-                if (((lapioche[k] < (char) 65 || lapioche[k] > (char) 90) && lapioche[k] != (char) JOKER) {
+                if (lapioche[k] < (char) 65 && lapioche[k] > (char) 90 && lapioche[k] != (char) JOKER) {
                     printf("La pioche est vide !! Il n'y a plus de rechargement possible !!\n");
                 }
             }
