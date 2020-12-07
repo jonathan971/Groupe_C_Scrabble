@@ -54,8 +54,8 @@ int main() {
                             Player[i].score+=placementMot(plateau_de_jeu, Player[i].chevalet_joueur, &nbr_lettre, alphabet, occurrence_point);//fichier : Verification_chevalet
                         }
                         j=1;
-                        printf("Score : %d\n\n",Player[i].score);
                         recharge_chevalet(Player, &modiftaillephysique, lapioche,&i);//fichier : joueur_initializer
+                        printf("Score : %d\n\n",Player[i].score);
                         choix=0;
                     }
                 }
