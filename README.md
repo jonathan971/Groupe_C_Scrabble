@@ -16,7 +16,7 @@ Le groupe est composé de 3 étudiants ING1 de l'ECE Lyon <br />
 ---------------------------|----------------------------|----------------------------|<br />
 VELIN Jonathan &nbsp; &nbsp; &nbsp;| Kenza ERRAJI &nbsp; &nbsp; &nbsp; &nbsp; | Paul NAVON &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
 
-## Bienvenue sur Scrabble by NEJ 
+## Bienvenue sur Scrabble by NEV & PKJ 
 Une soirée entre amis et personne ne sait quoi faire ? Un après-midi en famille et tout le monde s’ennuie ? Pourquoi ne pas tenter une partie de Scrabble ? Ce serait un bon moyen de passer le temps tout en s’assurant de passer un bon moment ensemble !<br />
 ## Sous-fichiers et utlités
 Dans ce dossier vous trouverez les sous-fichiers suivants :
